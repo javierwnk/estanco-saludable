@@ -8,7 +8,7 @@ let productoAEditar = {
     "image2": "",
     "image3": "",
     "image4": "",
-    "category": "",
+    "category": ""
 }
 let imagenActual = ""
 let imagen2Actual = ""

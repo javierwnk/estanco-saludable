@@ -315,4 +315,22 @@ function limpiarTexto () {
     imagen2Actual = ""
     imagen3Actual = ""
     imagen4Actual = ""
-}
+
+    document.getElementById("title").value = ""
+    document.getElementById("body").value = ""
+    document.getElementById("title2").value = ""
+    document.getElementById("body2").value = ""
+
+    postAEditar = {
+        "title": "",
+        "body": "",
+        "fecha": "",
+        "image": ""
+    }
+
+    document.getElementById("estadoImagen2").innerText = ""
+    document.getElementById("estadoImagen").innerText = ""
+
+
+    document.getElementById("portada-post-preview").innerHTML = ""
+    }

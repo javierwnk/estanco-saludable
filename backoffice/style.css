@@ -61,3 +61,31 @@ h2 {
 .requerido {
     color: red;
 }
+
+h3 {
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+}
+
+.option {
+    width: 40%;
+    height: 160px;
+    background-color: #ededed;
+    border: 1px solid #cecece;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 52px;
+}
+
+.option:hover {
+    background-color: #cecece;
+    cursor: pointer;
+}

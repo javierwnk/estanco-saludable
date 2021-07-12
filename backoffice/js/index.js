@@ -46,7 +46,9 @@ logout.addEventListener("click", e => {
     e.preventDefault();
 
     auth.signOut().then(() => {
-        console.log("Deslogeo exitoso")
+        document.getElementById("prod").style.display = "none";
+        document.getElementById("acciones").style.display = "none";
+        document.getElementById("post").style.display = "none";
     })
 })
 
@@ -128,9 +130,47 @@ auth.onAuthStateChanged(user => {
                 setupProducts(snapshot.docs)
                 loginCheck(user)
             })
+
+
+        fs.collection("blog").orderBy("fecha")
+            .get()
+            .then((snapshot) => {
+                setupPosts(snapshot.docs)
+                loginCheck(user)
+            })
     } else {
         console.log("sign out")
         setupProducts([])
         loginCheck(user)
     }
 })
+
+// Opciónes de navegación
+
+document.getElementById("adm-prod").addEventListener("click", () => {
+    document.getElementById("prod").style.display = "block";
+    document.getElementById("acciones").style.display = "none";
+    document.getElementById("post").style.display = "none";
+})
+
+document.getElementById("adm-blog").addEventListener("click", () => {
+    document.getElementById("prod").style.display = "none";
+    document.getElementById("acciones").style.display = "none";
+    document.getElementById("post").style.display = "block";
+
+})
+
+document.getElementById("products").addEventListener("click", () => {
+    document.getElementById("prod").style.display = "block";
+    document.getElementById("acciones").style.display = "none";
+    document.getElementById("post").style.display = "none";
+})
+
+document.getElementById("blog").addEventListener("click", () => {
+    document.getElementById("prod").style.display = "none";
+    document.getElementById("acciones").style.display = "none";
+    document.getElementById("post").style.display = "block";
+
+})
+
+

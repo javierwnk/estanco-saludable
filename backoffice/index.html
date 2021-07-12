@@ -31,6 +31,8 @@
   <script defer src="./js/index.js"></script>
   <script defer src="./js/alta.js"></script>
   <script defer src="./js/editar.js"></script>
+  <script defer src="./js/blog.js"></script>
+
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -41,7 +43,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Administrador de Estanco Saludable</a>
+      <a class="navbar-brand" href="#" id="brand">Administrador de Estanco Saludable</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,6 +57,10 @@
 
           <li class="nav-item logged-in" style="display: none;">
             <a class="nav-link" href="#" id="products">Productos</a>
+          </li>
+
+          <li class="nav-item logged-in" style="display: none;">
+            <a class="nav-link" href="#" id="blog">Blog</a>
           </li>
 
 
@@ -73,7 +79,25 @@
     <h1>Estanco Saludable - Administrador</h1>
   </div>
 
-  <div class="container logged-in" style="display: block;">
+  <!-- Opciones de administrador -->
+
+  <div class="container logged-in" id="acciones" style="display: none;">
+    <h2>Administrador de Estanco Saludable</h2>
+    <div class="spacer"></div>
+    <h3>Seleccione una opción</h3>
+    <div class="actions container">
+      <div class="option" id="adm-prod">
+        <p>Administrar Productos</p>
+      </div>
+      <div class="option" id="adm-blog">
+        <p>Administrar Blog</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Administrador de productos -->
+
+  <div class="container" id="prod" style="display: none;">
     <h2>Administrador de productos</h2>
     <div class="spacer"></div>
     <div class="actions container">
@@ -86,6 +110,23 @@
 
     </div>
   </div>
+
+  <!-- Administrador de blog -->
+
+  <div class="container" id="post" style="display: none;">
+    <h2>Administrador de posteos</h2>
+    <div class="spacer"></div>
+    <div class="actions container">
+      <button type="button" class="btn btn-success btn-large" data-bs-toggle="modal" data-bs-target="#altaPost">Alta de
+        nuevo posteo</button>
+    </div>
+    <div class="productList" id="postsList">
+
+      <!-- Listado de posteos -->
+
+    </div>
+  </div>
+
 
   <!-- Modal Login -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -135,7 +176,7 @@
             <div class="mb-3">
               <label for="description" class="form-label">Descripción <span class="requerido">*</span></label>
               <textarea class="form-control" id="description" rows="3"
-                placeholder="Dimensiones: Altura 1.70 (80-61-84). Tipo de base: Cuadrada. Talle: 44."
+                placeholder="Ingredientes: Romero seco y aceite de oliva extra virgen."
                 required></textarea>
             </div>
             <div class="row">
@@ -232,7 +273,7 @@
             <div class="mb-3">
               <label for="description2" class="form-label">Descripción <span class="requerido">*</span></label>
               <textarea class="form-control" id="description2" rows="3"
-                placeholder="Dimensiones: Altura 1.70 (80-61-84). Tipo de base: Cuadrada. Talle: 44."
+                placeholder="Ingredientes: Romero seco y aceite de oliva extra virgen."
                 required></textarea>
             </div>
             <div class="row">
@@ -310,13 +351,108 @@
     </div>
   </div>
 
+  <!-- Modal Blog -->
+
+  <div class="modal fade" id="altaPost" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear entrada de blog</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="requerido">* Campos obligatorios</h6>
+        <form class="form-group" id="create-post">
+          
+          <div class="mb-3">
+            <label for="title" class="form-label">Titulo <span class="requerido">*</span></label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Titulo del posteo" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="body" class="form-label">Cuerpo <span class="requerido">*</span></label>
+            <textarea class="form-control" id="body" rows="7"></textarea>
+          </div>
+          
+          <div class="row">
+            <div class="col-4" id="portada-post-preview">
+
+            </div>
+            <div class="mb-4 col-8">
+              <label for="portada-post" class="form-label">Seleccione imagen de portada <span
+                  class="requerido">*</span></label>
+              <input class="form-control" type="file" id="portada-post" required accept="image/*">
+              <p id="estadoImagen"></p>
+            </div>
+          </div>
+
+         </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary disabled" id="altaPosts" data-bs-dismiss="modal">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal Edición Blog -->
+
+  <div class="modal fade" id="editPosts" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar entrada de blog</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="requerido">* Campos obligatorios</h6>
+        <form class="form-group" id="edit-post">
+          
+          <div class="mb-3">
+            <label for="title2" class="form-label">Titulo <span class="requerido">*</span></label>
+            <input type="text" name="title2" id="title2" class="form-control" placeholder="Titulo del posteo" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="body2" class="form-label">Cuerpo <span class="requerido">*</span></label>
+            <textarea class="form-control" id="body2" rows="7"></textarea>
+          </div>
+          
+          <div class="row">
+            <div class="col-4" id="portada-post-preview2">
+
+            </div>
+            <div class="mb-4 col-8">
+              <label for="portada-post2" class="form-label">Seleccione imagen de portada <span
+                  class="requerido">*</span></label>
+              <input class="form-control" type="file" id="portada-post2" required accept="image/*">
+              <p id="estadoImagen2"></p>
+            </div>
+          </div>
+
+         </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="editPost" data-bs-dismiss="modal">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <!-- Toast -->
 
   <div id="delete-toast" class="toast align-items-center text-white bg-primary border-0 toast-position" role="alert"
     aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Producto eliminado correctamente
+        Producto/Posteo eliminado correctamente
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
         aria-label="Close"></button>
@@ -338,7 +474,7 @@
     aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        Producto editado correctamente
+        Producto/Posteo editado correctamente
       </div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
         aria-label="Close"></button>
