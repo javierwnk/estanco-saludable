@@ -6,11 +6,13 @@
   "dependencies": {
     "sass": "^1.35.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": 
-    "node-sass --include-path scss scss/styles.scss css/styles.css",
+    "build-css": "node-sass --include-path scss scss/styles.scss css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
