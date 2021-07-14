@@ -1,0 +1,15 @@
+
+
+.carousel-indicators [data-bs-target]{
+    background-color: $white;
+    border: 1px solid black;
+    background-clip: unset;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.carousel-indicators .active {
+    background-color: $green;
+    border: 1px solid $green;
+}

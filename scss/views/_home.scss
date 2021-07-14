@@ -1,0 +1,158 @@
+// Imagen del país de la home
+
+.country {
+    height: 1000px;
+    width: 100%;
+    background: url("../../src/argDotted.png") no-repeat;
+    background-position: left;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.1;
+}
+
+// Sección de industria nacional
+
+.nacional {
+    height: 426px;
+    margin-top: -35px;
+
+    img {
+        filter: drop-shadow(0px 7px 9px rgba(0, 0, 0, 0.23));
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        margin-top: 35px;
+    }
+
+    .imagesBackground {
+        background: no-repeat center/150% url("../../src/bg-hojas.jpg");
+        width: 60%;
+        height: inherit;
+        position: absolute;
+        right: 0;
+        mix-blend-mode: multiply;
+        
+        .layer {
+            background-color: rgba(58, 136, 76, 1);
+            mix-blend-mode: multiply;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // Texto "Confiamos en la producción nacional"
+
+    .textImage {
+        width: 30%;
+        color: $white;
+        font: {
+            weight: bolder;
+            size: 3rem;
+        }
+        text-shadow: 0px 4px 4px #000000;
+        line-height: 50px;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        margin: 130px 110px;
+    }    
+    
+}
+
+
+// Sección how to de la home
+
+
+.howTo {
+    height: 606px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .howToInfo {
+        
+        z-index: 6;
+        padding: 0 0 0 100px;
+
+        h3 {
+            color: $black;
+            font: {
+                weight: 700;
+                size: 3rem
+            }
+        }
+
+        p {
+            font: {
+                weight: 300;
+                size: 1.5rem;
+            }
+        }
+    }
+
+    .howToImage {
+        padding: 0 100px 0 0;
+    }
+
+}
+
+.productInfo {
+    background-color: rgba(224, 255, 229, 1);
+    width: 100%;
+    height: 309px;
+    box-shadow: 10px 10px 10px rgba(3, 3, 3, 0.11);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    #imgQuality {
+        background: url("../../src/stars.png") no-repeat center;
+    }
+
+    #imgEcofriendly {
+        background: url("../../src/ecology.svg") no-repeat center;
+    }
+
+    #imgPayment {
+        background: url("../../src/creditcards.svg") no-repeat center;
+    }
+
+    #imgQuality, #imgEcofriendly, #imgPayment {
+        height: 65px;
+    }
+
+    .productInfoCard {
+        width: 33%;
+        padding: 0 32px;
+        text-align: center;
+
+        h4 {
+            color: #5E755D;
+            font: {
+                weight: 700;
+                size: 18px;
+            } 
+            margin: 18px 0 20px 0;
+        }
+
+        p {
+            color: #7C7C7C;
+            font-weight: 300;
+        }
+    }
+
+    .borderVerde {
+        border-left: 2px solid $green;
+        border-right: 2px solid $green;
+    }
+
+
+}
+
+.recetas {
+    height: 846px;
+}
+

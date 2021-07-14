@@ -1,9 +1,15 @@
 
 // Import base
 @import './base/reset';
+@import './base/colors';
 
 // Import Components
 @import './components/buttons';
+@import './components/carousel';
+@import './components/social';
+@import './components/slider-productos';
+
+
 
 // Import Layout
 @import './layout/forms';
