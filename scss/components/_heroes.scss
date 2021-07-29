@@ -1,0 +1,23 @@
+.subpagesHero {
+    width: 100%;
+    height: 354px;
+    background-position: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    p {
+        width: 60%;
+        color: $white;
+        padding: 0px 40px;
+        font: {
+            size: 3rem;
+            weight: 600;
+        }
+        line-height: 48px;
+    }
+}
+
+#catalogHero {
+    background: url("../src/banner-estanco1.png")
+}

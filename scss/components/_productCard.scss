@@ -1,0 +1,41 @@
+.productCard {
+    box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17);
+
+    .cardImage {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .productCardInfo {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        padding: 20px 10px;
+        box-sizing: border-box;
+
+        .productCardName {
+            width: 200px;
+            font: {
+                weight: 600;
+                size: 1.25rem;
+            }
+            
+        }
+
+        .productCardPrice {
+            background-color: #029924;
+            height: fit-content;
+            font: {
+                weight: 600;
+                size: 1.25rem;
+            }
+            color: $white;
+            padding: 2px 15px 2px 8px;
+            box-sizing: border-box;
+
+        }
+    }
+}

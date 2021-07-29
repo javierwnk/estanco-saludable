@@ -8,12 +8,18 @@
 @import './components/carousel';
 @import './components/social';
 @import './components/slider-productos';
+@import './components/subscribeForm';
+@import './components/heroes';
+@import './components/productCard';
 
 
 
 // Import Layout
 @import './layout/forms';
 @import './layout/header';
+@import './layout/footer';
+
 
 // Import Views
 @import './views/home';
+@import './views/productos';

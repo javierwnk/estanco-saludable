@@ -1,0 +1,42 @@
+.subscribeForm {
+    background: url("../src/subscribeForm.png") no-repeat;
+    background-size: cover;
+    height: 302px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px -10px 10px rgba(3, 3, 3, 0.11);
+
+    input {
+        height: 51px;
+        width: 343px;
+        margin-right: 10px;
+        padding-left: 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+    }
+
+    input::placeholder {
+        color: rgba(121, 128, 119, 1);
+    }
+
+    h4 {
+        font: {
+            weight: 700;
+            size: 2.25rem;
+        }
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #013B1C;
+    }
+
+    p {
+        font: {
+            size: 1.5rem;
+        }
+        color: rgba(121, 128, 119, 1);
+        margin-bottom: 44px;
+    }
+}

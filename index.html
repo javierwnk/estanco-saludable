@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/slider-productos.js"></script>
+    <script defer src="./js/slider-productos.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -20,8 +20,10 @@
 
 <body>
     <header>
-        <h1>Estanco Saludable</h1>
-        <img src="./src/logo-verde.svg" alt="Logo Estanco Saludable">
+        <a href="index.html">
+            <h1>Estanco Saludable</h1>
+            <img src="./src/logo-verde.svg" alt="Logo Estanco Saludable">
+        </a>
 
         <nav>
             <ul>
@@ -68,7 +70,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
 
-            <div class="social">
+            <div class="social homePosition">
                 <ul>
                     <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
                     <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
@@ -80,26 +82,26 @@
             </div>
         </div>
 
-        <div class="sliderProductos">
-            <div class="info">
+        <div id="bgSliderProducts" class="sliderProductos">
+            <div id="bgProductInfo" class="info">
                 <div class="container">
                     <p class="light">Nuestros</p>
                     <p class="bold">productos</p>
                 </div>
             </div>
-            <div class="sliderProductList">
+            <div id="sliderProductList" class="sliderProductList">
 
                 <div class="title">
-                    <h2>Aceite de Oliva</h2>
+                    <h2 id="slideTitle">Aceite de Oliva</h2>
 
                     <div class="sliderControlers">
-                        <div><span class="iconify" data-icon="mdi:chevron-up" data-inline="false"></span></div>
-                        <div><span class="iconify" data-icon="mdi:chevron-down" data-inline="false"></span></div>
+                        <div id="controlUp"><span class="iconify" data-icon="mdi:chevron-up" data-inline="false"></span></div>
+                        <div id="controlDown"><span class="iconify" data-icon="mdi:chevron-down" data-inline="false"></span></div>
                     </div>
                 </div>
 
                 <div class="subtitle">
-                    <p>
+                    <p id="slideText">
                         Prueba la excelencia con los aceites de oliva y saborizados de Doña juana
                     </p>
                 </div>
@@ -175,8 +177,60 @@
         </div>
 
         <div class="recetas">
+            <div class="action">
+                <div>
+                    <p>Crea recetas</p>
+                    <p class="greenTextBold">saludables</p>
+                    <p class="thinParagraph">Usa nuestros productos y crea estos deliciosos platillos.</p>
+                </div>
+                <div>
+                    <button class="roundedGreen">Ver recetas</button>
+                </div>
+            </div>
+
+            <div class="images">
+                <div><img src="./src/recetas-1.jpg" alt="Imagen de comida"></div>
+                <div><img src="./src/recetas-2.jpg" alt="Imagen de comida"></div>
+                <div><img src="./src/recetas-3.jpg" alt="Imagen de comida"></div>
+                <div><img src="./src/recetas-4.jpg" alt="Imagen de comida"></div>
+            </div>
+        </div>
+
+        <div class="subscribeForm">
+            <div>
+                <h4>Suscríbete</h4>
+                <p>Recibe nuestras recetas y promociones al instante</p>
+            </div>
+            <div>
+                <form action="" method="post">
+                    <input type="email" name="email" id="email" placeholder="Tu email"> 
+                    <button type="submit" class="subscribe">SUSCRÍBETE</button>
+                </form>
+            </div>
         </div>
     </main>
+
+    <footer>
+        <div class="contactInfo">
+            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a href="tel:+541158855912"> 011 5885-5912 </a></p>
+            <p class="city">Ciudad de Buenos Aires, Argentina</p>
+        </div>
+
+        <div><img src="./src/logo-blanco.svg" alt="Logo Estanco Saludable"></div>
+        
+        <div class="socialLinks">
+            <p class="followGreen">Seguínos en nuestras redes sociales</p>
+            
+            <ul>
+                <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp"
+                            data-inline="false"></span></a></li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 
