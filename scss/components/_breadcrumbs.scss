@@ -1,0 +1,62 @@
+// Breadcrumb de catálogo
+
+.breadcrumb {
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline;
+            margin: 0 20px;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color:#4A4A4A;
+                font: {
+                    weight: 300;
+                }
+            }
+
+            .active {
+                font: {
+                    weight: 700;
+                }
+                text-decoration: underline;
+            }
+        }
+
+        li:first-child {
+            font: {
+                weight: bold;
+            }
+        }
+
+        li a:hover {
+            font: {
+                weight: bold;
+            }
+        }
+    }
+}
+
+
+// Breadcrumb de producto
+
+.breadcrumbDetalle {
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: rgba(74, 74, 74, 1);
+                font: {
+                    weight: 300;
+                }
+            }
+        }
+    }
+}

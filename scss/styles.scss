@@ -11,6 +11,9 @@
 @import './components/subscribeForm';
 @import './components/heroes';
 @import './components/productCard';
+@import './components/breadcrumbs';
+@import './components/inputs';
+@import './components/releatedProducts';
 
 
 
@@ -23,3 +26,4 @@
 // Import Views
 @import './views/home';
 @import './views/productos';
+@import './views/productDetail';

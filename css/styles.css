@@ -5,6 +5,15 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
+
 .roundedDarkGreen, .roundedGreen {
   border-radius: 36px;
   background: #013B1C;
@@ -33,6 +42,13 @@
 
 button:focus {
   outline: none; }
+
+.btnPrimary {
+  background: #029924;
+  color: #FFF;
+  border: none;
+  font-weight: 600;
+  font-size: 1.5rem; }
 
 .carousel-indicators [data-bs-target] {
   background-color: #FFF;
@@ -205,8 +221,17 @@ button:focus {
 #catalogHero {
   background: url("../src/banner-estanco1.png"); }
 
+#productHero {
+  background: url("../src/heroedetail.png"); }
+  #productHero p {
+    color: #53746b; }
+
 .productCard {
-  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17); }
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17);
+  background: #FFF; }
+  .productCard a {
+    text-decoration: none;
+    color: #131212; }
   .productCard .cardImage {
     width: 100%; }
     .productCard .cardImage img {
@@ -229,6 +254,66 @@ button:focus {
       color: #FFF;
       padding: 2px 15px 2px 8px;
       box-sizing: border-box; }
+
+.breadcrumb ul {
+  list-style-type: none; }
+  .breadcrumb ul li {
+    display: inline;
+    margin: 0 20px; }
+    .breadcrumb ul li a {
+      display: inline-block;
+      text-decoration: none;
+      color: #4A4A4A;
+      font-weight: 300; }
+    .breadcrumb ul li .active {
+      font-weight: 700;
+      text-decoration: underline; }
+  .breadcrumb ul li:first-child {
+    font-weight: bold; }
+  .breadcrumb ul li a:hover {
+    font-weight: bold; }
+
+.breadcrumbDetalle ul {
+  list-style-type: none; }
+  .breadcrumbDetalle ul li {
+    display: inline; }
+    .breadcrumbDetalle ul li a {
+      display: inline-block;
+      text-decoration: none;
+      color: #4a4a4a;
+      font-weight: 300; }
+
+.qty input {
+  width: 34px;
+  border: none;
+  border-bottom: 1px solid #131212;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem; }
+
+.qty input:focus {
+  border: 0;
+  border-bottom: 1px solid #131212;
+  outline: 0px; }
+
+.qty button {
+  height: fit-content;
+  border: 0;
+  background: #FFF;
+  color: #029924;
+  font-weight: 700;
+  font-size: 1.2rem; }
+
+.releatedProducts {
+  background: rgba(233, 233, 233, 0.6);
+  height: 770px; }
+  .releatedProducts h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 42px 0; }
+  .releatedProducts .releatedProductList {
+    justify-content: space-evenly !important; }
 
 header {
   width: 100%;
@@ -431,24 +516,6 @@ footer {
   height: fit-content;
   padding: 33px 0px; }
 
-.breadcrumb ul {
-  list-style-type: none; }
-  .breadcrumb ul li {
-    display: inline;
-    margin: 0 20px; }
-    .breadcrumb ul li a {
-      display: inline-block;
-      text-decoration: none;
-      color: #4A4A4A;
-      font-weight: 300; }
-    .breadcrumb ul li .active {
-      font-weight: 700;
-      text-decoration: underline; }
-  .breadcrumb ul li:first-child {
-    font-weight: bold; }
-  .breadcrumb ul li a:hover {
-    font-weight: bold; }
-
 .productContent {
   display: flex;
   flex-flow: row nowrap; }
@@ -462,3 +529,50 @@ footer {
   grid-row-gap: 81px;
   justify-content: space-around;
   margin-bottom: 83px; }
+
+.detaiLGrid {
+  display: grid;
+  grid-template-areas: "breadcrumbDetalle social" "productDetail social";
+  grid-template-columns: auto 50px;
+  grid-template-rows: 50px auto; }
+  .detaiLGrid .breadcrumbDetalle {
+    grid-area: breadcrumbDetalle; }
+  .detaiLGrid .productDetail {
+    grid-area: productDetail;
+    display: flex;
+    justify-content: space-between; }
+    .detaiLGrid .productDetail .imageProductDetail {
+      width: 50%; }
+      .detaiLGrid .productDetail .imageProductDetail img {
+        width: 100%; }
+    .detaiLGrid .productDetail .infoProductDetail {
+      width: 30%;
+      margin: 0 auto;
+      color: #4A4A4A; }
+      .detaiLGrid .productDetail .infoProductDetail h2 {
+        font-weight: bold;
+        font-size: 2.25rem;
+        line-height: 34px; }
+      .detaiLGrid .productDetail .infoProductDetail h3 {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 2.25rem;
+        color: #029924; }
+      .detaiLGrid .productDetail .infoProductDetail .qty {
+        margin-top: 24px; }
+        .detaiLGrid .productDetail .infoProductDetail .qty p {
+          display: inline;
+          font-weight: 600;
+          font-size: 1.25rem;
+          margin-right: 12px; }
+      .detaiLGrid .productDetail .infoProductDetail button.btnPrimary {
+        margin-top: 52px;
+        width: 369px;
+        height: 60px; }
+      .detaiLGrid .productDetail .infoProductDetail .productDescription {
+        color: #131212;
+        font-weight: 300;
+        font-size: 1.25rem;
+        margin-top: 32px; }
+  .detaiLGrid .social {
+    grid-area: social; }

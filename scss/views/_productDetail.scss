@@ -1,0 +1,79 @@
+.detaiLGrid {
+    display: grid;
+    grid-template-areas: "breadcrumbDetalle social"
+    "productDetail social";
+    grid-template-columns: auto 50px;
+    grid-template-rows: 50px auto;
+
+    .breadcrumbDetalle {
+        grid-area: breadcrumbDetalle;
+    }
+
+    .productDetail {
+        grid-area: productDetail;
+        display: flex;
+        justify-content: space-between;
+        
+        .imageProductDetail {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .infoProductDetail {
+            width: 30%;
+            margin: 0 auto;
+            color: #4A4A4A;
+
+            h2 {
+                font: {
+                    weight: bold;
+                    size: 2.25rem;
+                }
+                line-height: 34px;
+            }
+
+            h3 {
+                margin-top: 12px;
+                font: {
+                    weight: bold;
+                    size: 2.25rem;
+                }
+                color: $darkGreen2;
+            }
+
+            .qty {
+                margin-top: 24px;
+                p {
+                    display: inline;
+                    font: {
+                        weight: 600;
+                        size: 1.25rem;
+                    }
+                    margin-right: 12px;
+                }
+            }
+
+            button.btnPrimary {
+                margin-top: 52px;
+                width: 369px;
+                height: 60px;
+            }
+
+            .productDescription {
+                color: $black;
+                font: {
+                    weight: 300;
+                    size: 1.25rem;
+                }
+                margin-top: 32px;
+            }
+        }
+    }
+
+    .social {
+        grid-area: social;
+    }
+}

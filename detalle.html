@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <script defer src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/slider-productos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <h1>Estanco Saludable</h1>
+            <img src="./src/logo-verde.svg" alt="Logo Estanco Saludable">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a class="icon" href="cart.html"><span class="iconify" data-icon="mdi:cart-outline"
+                            data-inline="false"></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="subpagesHero" id="productHero">
+            <p>Disfruta haciendo recetas con Productos Gourmet</p>
+        </div>
+
+        <div class="content detaiLGrid">
+
+            <div class="breadcrumbDetalle">
+                <ul>
+                    <li><a href="">Productos</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
+                    <li><a href="">Aceites</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
+                    <li>Aceite de oliva Extra virgen con romero</li>
+                </ul>    
+            </div>
+
+            
+            <div class="productDetail">
+                <div class="imageProductDetail">
+                    <img src="./src/productImageTest.jpg" alt="">
+                </div>
+                <div class="infoProductDetail">
+                    <h2>Aceite de oliva Extra virgen con romero</h2>
+                    <h3>$460</h3>
+
+                    <div class="qty">
+                        <p>Cantidad:</p>
+
+                            <button>-</button>    
+                        <input type="number" name="qty" id="qty" value="1">
+                            <button>+</button>
+                    </div>
+
+                    <button class="btnPrimary">AÑADIR AL CARRITO</button>
+                
+                    <div class="productDescription">
+                        <p>Ingredientes: Romero seco y aceite de oliva extra virgen.</p>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div class="social">
+                <ul>
+                    <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
+                    <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
+                    <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
+                    <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
+                    <li><a class="wsp" href=""><span class="iconify" data-icon="mdi:whatsapp"
+                                data-inline="false"></span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="releatedProducts">
+            <h2>Productos Recomendados</h2>
+
+            <div class="releatedProductList productList">
+                <div class="productCard">
+                    <a href="">
+                        <div class="cardImage">
+                            <img src="./src/productImageTest.jpg" alt="">
+                        </div>
+
+                        <div class="productCardInfo">
+                            <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
+                            <p class="productCardPrice">$400</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="productCard">
+                    <a href="">
+                        <div class="cardImage">
+                            <img src="./src/productImageTest.jpg" alt="">
+                        </div>
+
+                        <div class="productCardInfo">
+                            <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
+                            <p class="productCardPrice">$400</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="productCard">
+                    <a href="">
+                        <div class="cardImage">
+                            <img src="./src/productImageTest.jpg" alt="">
+                        </div>
+
+                        <div class="productCardInfo">
+                            <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
+                            <p class="productCardPrice">$400</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="contactInfo">
+            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a href="tel:+541158855912"> 011 5885-5912 </a></p>
+            <p class="city">Ciudad de Buenos Aires, Argentina</p>
+        </div>
+
+        <div><img src="./src/logo-blanco.svg" alt="Logo Estanco Saludable"></div>
+        
+        <div class="socialLinks">
+            <p class="followGreen">Seguínos en nuestras redes sociales</p>
+            
+            <ul>
+                <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp"
+                            data-inline="false"></span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
