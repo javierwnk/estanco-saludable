@@ -21,9 +21,11 @@
 @import './layout/forms';
 @import './layout/header';
 @import './layout/footer';
+@import './layout/twoColumnSection';
 
 
 // Import Views
 @import './views/home';
 @import './views/productos';
 @import './views/productDetail';
+@import './views/contact';
