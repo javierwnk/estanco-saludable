@@ -316,6 +316,9 @@ button:focus {
   .releatedProducts .releatedProductList {
     justify-content: space-evenly !important; }
 
+.divider {
+  border: 1px solid rgba(121, 128, 119, 0.7); }
+
 form {
   width: 445px;
   margin: 80px auto 0 auto; }
@@ -619,3 +622,79 @@ footer {
     font-weight: 600;
     font-size: 3rem;
     text-align: center; }
+
+.order {
+  height: 100% !important; }
+  .order h1 {
+    display: none; }
+  .order h2 {
+    margin-top: 54px;
+    color: #4A4A4A;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 36px; }
+  .order h3 {
+    color: #53746B;
+    text-align: center;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 23px; }
+  .order form {
+    margin: 24px auto 0 auto !important;
+    padding-bottom: 36px; }
+  .order .datosPedido {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center; }
+  .order .resumenPedido {
+    width: 50%;
+    height: 100vh;
+    background: #F2F2F2;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 32px 0; }
+    .order .resumenPedido .resumenCard {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 80%; }
+      .order .resumenPedido .resumenCard img {
+        width: 165px; }
+      .order .resumenPedido .resumenCard .productName {
+        width: 40%;
+        color: #4A4A4A;
+        font-size: 1.5rem;
+        font-weight: 600; }
+      .order .resumenPedido .resumenCard .productPrice {
+        color: #4A4A4A;
+        font-size: 1.25rem;
+        font-weight: 600; }
+    .order .resumenPedido .divider {
+      margin-top: 32px;
+      width: 80%; }
+    .order .resumenPedido .totals {
+      display: grid;
+      width: 80%;
+      padding: 48px 0 0 0;
+      grid-template-areas: "total total monto" "money money money";
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 2rem; }
+    .order .resumenPedido .total {
+      grid-area: total; }
+    .order .resumenPedido .monto {
+      grid-area: monto;
+      text-align: right; }
+    .order .resumenPedido .money {
+      grid-area: money;
+      text-align: right;
+      font-weight: 300; }
+    .order .resumenPedido .total, .order .resumenPedido .monto {
+      text-transform: capitalize;
+      color: #53746B;
+      font-size: 1.5rem;
+      font-weight: 600; }

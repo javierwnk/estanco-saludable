@@ -19,49 +19,56 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html">
-            <h1>Estanco Saludable</h1>
-            <img src="./src/logo-verde.svg" alt="Logo Estanco Saludable">
-        </a>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a class="icon" href="cart.html"><span class="iconify" data-icon="mdi:cart-outline"
-                            data-inline="false"></span></a></li>
-            </ul>
-        </nav>
-    </header>
 
     <main>
 
-    </main>
+        <div class="twoColumnSection order">
 
-    <footer>
-        <div class="contactInfo">
-            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a href="tel:+541158855912"> 011 5885-5912 </a></p>
-            <p class="city">Ciudad de Buenos Aires, Argentina</p>
-        </div>
+            <div class="datosPedido">
+                <a href="index.html">
+                    <h1>Estanco Saludable</h1>
+                    <img src="./src/logo-verde.svg" alt="Logo Estanco Saludable">
+                </a>        
 
-        <div><img src="./src/logo-blanco.svg" alt="Logo Estanco Saludable"></div>
+                <h2>Completa tu pedido</h2>
+                <h3>Coloca tus datos para envíar tu orden</h3>
+
+                <form action="">
+
+                    <input type="text" name="name" id="name" placeholder="Nombre y Apellido">
+                    <input type="email" name="email" id="email" placeholder="Correo electrónico">
+                    <input type="number" name="dni" id="dni" placeholder="DNI">
+                    <input type="tel" name="phone" id="phone" placeholder="Número de teléfono">
+                    <input type="text" name="city" id="city" placeholder="Localidad">
+                    <input type="text" name="address" id="address" placeholder="Dirección">
         
-        <div class="socialLinks">
-            <p class="followGreen">Seguínos en nuestras redes sociales</p>
-            
-            <ul>
-                <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp"
-                            data-inline="false"></span></a></li>
-            </ul>
+                    <button type="submit" class="roundedGreen btnPrimary">Envíar Pedido</button>
+                </form>
+            </div>
+
+            <div class="resumenPedido">
+
+                <div class="resumenCard">
+                    <img src="./src/productImageTest.jpg" alt="">
+                    <p class="productName">Aceite de oliva Extra virgen con romero</p>
+                    <p class="productPrice">$460</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="totals">
+                    <p class="total">Total</p>
+                    <p class="monto">$460</p>
+                    <p class="money">Pesos Argentinos</p>
+                </div>
+
+                <div class="divider"></div>
+
+            </div>
+
         </div>
-    </footer>
+
+    </main>
 
 </body>
 

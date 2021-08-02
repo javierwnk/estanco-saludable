@@ -1,0 +1,118 @@
+.order {
+    height: 100% !important;
+
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        margin-top: 54px;
+        color: #4A4A4A;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 36px;
+    }
+
+    h3 {
+        color: #53746B;
+        text-align: center;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 23px;
+    }
+
+    form {
+        margin: 24px auto 0 auto !important;
+        padding-bottom: 36px;
+    }
+
+    .datosPedido {
+        width: 50%;
+        height: fit-content;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resumenPedido {
+        width: 50%;
+        height: 100vh;
+        background: #F2F2F2;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 32px 0;
+
+        .resumenCard {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 80%;
+
+            img {
+                width: 165px;
+            }
+
+            .productName {
+                width: 40%;
+                color: #4A4A4A;
+                font: {
+                    size: 1.5rem;
+                    weight: 600;
+                }
+            }
+
+            .productPrice {
+                color: #4A4A4A;
+                font: {
+                    size: 1.25rem;
+                    weight: 600;
+                }
+            }
+
+        }
+
+        .divider {
+            margin-top: 32px;
+            width: 80%;
+        }
+
+        .totals {
+            display: grid;
+            width: 80%;
+            padding: 48px 0 0 0;
+            grid-template-areas: "total total monto"
+            "money money money";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 2rem;
+        }
+
+        .total {
+            grid-area: total;
+        }
+
+        .monto {
+            grid-area: monto;
+            text-align: right;
+        }
+
+        .money {
+            grid-area: money;
+            text-align: right;
+            font-weight: 300;
+        }
+
+        .total, .monto {
+            text-transform: capitalize;
+            color: #53746B;
+            font: {
+                size: 1.5rem;
+                weight: 600;
+            }
+        }
+    }
+
+    
+}
