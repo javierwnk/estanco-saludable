@@ -562,7 +562,7 @@ footer {
 
 .detaiLGrid {
   display: grid;
-  grid-template-areas: "breadcrumbDetalle social" "productDetail social";
+  grid-template-areas: "breadcrumbDetalle social" "productDetail social";
   grid-template-columns: auto 50px;
   grid-template-rows: 50px auto; }
   .detaiLGrid .breadcrumbDetalle {
@@ -623,6 +623,86 @@ footer {
     font-size: 3rem;
     text-align: center; }
 
+.cartPreview {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(83, 116, 107, 0.74);
+  overflow-x: hidden;
+  transition: 0.7s; }
+  .cartPreview .cartPreviewContent {
+    width: 50%;
+    height: fit-content;
+    background: #FFF;
+    position: absolute;
+    right: 0;
+    box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-flow: column nowrap; }
+    .cartPreview .cartPreviewContent .previewTitle {
+      color: #53746B;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      width: 100%;
+      font-size: 3rem;
+      font-weight: 700;
+      padding: 32px; }
+      .cartPreview .cartPreviewContent .previewTitle .back:hover {
+        cursor: pointer; }
+      .cartPreview .cartPreviewContent .previewTitle h2 {
+        width: fit-content;
+        margin-left: 160px; }
+    .cartPreview .cartPreviewContent .previewProductList {
+      width: 95%;
+      height: fit-content;
+      margin: 0 auto; }
+      .cartPreview .cartPreviewContent .previewProductList .previewCard {
+        display: grid;
+        flex-flow: row nowrap;
+        grid-template-areas: "productImg productName productName" "productImg productCant productCant" "productImg productPrice deleteIcon";
+        column-gap: 14px; }
+      .cartPreview .cartPreviewContent .previewProductList .productImg {
+        grid-area: productImg;
+        width: 165px; }
+      .cartPreview .cartPreviewContent .previewProductList .productName {
+        grid-area: productName;
+        color: #4A4A4A;
+        font-size: 1.5rem;
+        font-weight: 600; }
+      .cartPreview .cartPreviewContent .previewProductList .productCant {
+        grid-area: productCant;
+        color: #4A4A4A;
+        font-size: 1rem;
+        font-weight: 600; }
+      .cartPreview .cartPreviewContent .previewProductList .productPrice {
+        grid-area: productPrice;
+        background: #029924;
+        width: fit-content;
+        padding: 3px 12px;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 1.25rem; }
+      .cartPreview .cartPreviewContent .previewProductList .deleteIcon {
+        grid-area: deleteIcon;
+        font-size: 1.5rem;
+        color: #626262; }
+      .cartPreview .cartPreviewContent .previewProductList .deleteIcon:hover {
+        cursor: pointer; }
+    .cartPreview .cartPreviewContent .subtotal {
+      width: 95%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      color: #53746B;
+      font-size: 2.25rem;
+      font-weight: 600; }
+    .cartPreview .cartPreviewContent button {
+      width: 60%;
+      margin: 24px auto; }
+
 .order {
   height: 100% !important; }
   .order h1 {
@@ -681,7 +761,7 @@ footer {
       display: grid;
       width: 80%;
       padding: 48px 0 0 0;
-      grid-template-areas: "total total monto" "money money money";
+      grid-template-areas: "total total monto" "money money money";
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 2rem; }
     .order .resumenPedido .total {

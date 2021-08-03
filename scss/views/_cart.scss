@@ -1,3 +1,130 @@
+.cartPreview {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba($color: #53746B, $alpha: 0.74);
+    overflow-x: hidden;
+    transition: 0.7s;
+
+
+    .cartPreviewContent {
+        width: 50%;
+        height: fit-content;
+        background: $white;
+        position: absolute;
+        right: 0;
+        box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-flow: column nowrap;
+
+        .previewTitle {
+            color:#53746B;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            width: 100%;
+            font: {
+                size: 3rem;
+                weight: 700;
+            }
+            padding: 32px;
+
+            .back:hover {
+                cursor: pointer;
+            }
+
+            h2 {
+                width: fit-content;
+                margin-left: 160px;
+            }
+
+        }
+
+        .previewProductList {
+            width: 95%;
+            height: fit-content;
+            margin: 0 auto;
+            
+            .previewCard {
+                display: grid;
+                flex-flow: row nowrap;
+                grid-template-areas: "productImg productName productName"
+                "productImg productCant productCant"
+                "productImg productPrice deleteIcon";
+                column-gap: 14px;
+            }
+
+            .productImg {
+                grid-area: productImg;
+                width: 165px;
+            }
+
+            .productName {
+                grid-area: productName;
+                color: #4A4A4A;
+                font: {
+                    size: 1.5rem;
+                    weight: 600;
+                }
+            }
+
+            .productCant {
+                grid-area: productCant;
+                color: #4A4A4A;
+                font: {
+                    size: 1rem;
+                    weight: 600;
+                }
+            }
+
+            .productPrice {
+                grid-area: productPrice;
+                background: #029924;
+                width: fit-content;
+                padding: 3px 12px;
+                color: $white;
+                font: {
+                    weight: 600;
+                    size: 1.25rem;
+                }
+            }
+
+            .deleteIcon {
+                grid-area: deleteIcon;
+                font: {
+                    size: 1.5rem;
+                }
+                color: #626262;
+            }
+
+            .deleteIcon:hover {
+                cursor: pointer;
+            }
+        }
+
+        .subtotal {
+            width: 95%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            color: #53746B;
+            font: {
+                size: 2.25rem;
+                weight: 600;
+            }
+        }
+        button {
+            width: 60%;
+            margin: 24px auto;
+        }
+
+    }
+}
+
+
+
 .order {
     height: 100% !important;
 
