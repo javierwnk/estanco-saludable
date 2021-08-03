@@ -39,8 +39,7 @@ const changeSlide = (operator) => {
     document.getElementById("bgSliderProducts").style.backgroundImage = `url(${slide[currentSlide].bgImage})`
     document.getElementById("bgProductInfo").style.backgroundImage = `url(${slide[currentSlide].descriptionImage})`
     document.getElementById("bgProductInfo").style.backgroundPositionY = `${slide[currentSlide].imagePosition}`
-
-
+    slider(slide[currentSlide].idCategoria)
 
 }
 

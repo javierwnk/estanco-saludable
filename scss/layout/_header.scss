@@ -38,6 +38,10 @@ header {
                 a:hover {
                     color: $darkGreen;
                 }
+
+                .icon:hover {
+                    cursor: pointer;
+                }
             
             }
         }

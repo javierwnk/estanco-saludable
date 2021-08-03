@@ -1,12 +1,13 @@
 .cartPreview {
-    width: 100%;
+	width: 0;
     height: 100%;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 1000;
     background: rgba($color: #53746B, $alpha: 0.74);
     overflow-x: hidden;
-    transition: 0.7s;
+    transition: 0.3s;
 
 
     .cartPreviewContent {
