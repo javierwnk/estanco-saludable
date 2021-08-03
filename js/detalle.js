@@ -18,7 +18,6 @@ const getProducto = () => {
     fs.doc("products/"+ idProd).get()
     .then(doc => {
         productoDetalle = doc.data()
-        console.log(productoDetalle)
         buildProducto()
     })
 }
@@ -27,11 +26,13 @@ const buildProducto = () => {
     // Breadcrumb
     document.getElementById("breadcrumbDetalle").innerHTML = `
     <ul>
-        <li><a href="detalle.html">Productos</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
-        <li><a href="detalle.html?id=${productoDetalle.category}">${productoDetalle.category}</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
+        <li><a href="productos.html">Productos</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
+        <li><a href="productos.html?id=${productoDetalle.category}">${productoDetalle.category}</a> <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
         <li>${productoDetalle.name}</li>
     </ul>    
     `
+
+    // Detalle del producto
 
     document.getElementById("productDetail").innerHTML = `
             <div class="imageProductDetail">
@@ -58,7 +59,7 @@ const buildProducto = () => {
         </div>
 
     `
-// FICHA DE PRODUCTO - INPUT DE CANTIDAD
+    // Funcionalidad del input de Cantidad
 
     let btnAdd = document.querySelector("#add")
     let btnSubstract = document.querySelector("#subtract")
@@ -73,6 +74,31 @@ const buildProducto = () => {
         quantityInput.value = parseInt(quantityInput.value) - 1;
     })
 
+    // Productos Recomendados
+
+    let releatedProducts = productos.filter(element => element.category == productoDetalle.category && element.name !== productoDetalle.name)
+    releatedProducts = releatedProducts.splice(0,3)
+
+    let html = ""
+
+    releatedProducts.forEach(element => {
+        html += `
+        <div class="productCard">
+        <a href="detalle.html?id=${element.id}">
+            <div class="cardImage">
+                <img src="${element.image}" alt="">
+            </div>
+
+            <div class="productCardInfo">
+                <p class="productCardName">${element.name}</p>
+                <p class="productCardPrice">$${element.price}</p>
+            </div>
+        </a>
+    </div>
+`
+    });
+
+    document.getElementById("releatedProductList").innerHTML = html
 
 }
 

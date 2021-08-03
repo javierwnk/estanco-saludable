@@ -324,22 +324,22 @@ button:focus {
 .divider {
   border: 1px solid rgba(121, 128, 119, 0.7); }
 
-form {
+.form {
   width: 445px;
   margin: 80px auto 0 auto; }
-  form input {
+  .form input {
     height: 48px; }
-  form input, form textarea {
+  .form input, .form textarea {
     border: 2px solid #53746B;
     border-radius: 13px;
     display: block;
     width: 445px;
     margin: 36px 0;
     padding: 12px 20px; }
-  form input:focus, form textarea:focus {
+  .form input:focus, .form textarea:focus {
     outline: none;
     border: 2px solid #22C146; }
-  form button {
+  .form button {
     width: 100%;
     border-radius: 13px !important; }
 
