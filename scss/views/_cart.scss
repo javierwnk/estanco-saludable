@@ -116,3 +116,29 @@
 
     
 }
+
+.sideCart {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: red;
+    height: 100%;
+    /* header height */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: right 0.3s;
+    z-index: 1000;
+
+    background: rgba($color: #53746b, $alpha: 0.74);
+}
+
+
+.previewCart {
+    width: 40%;
+    height: 100%;
+    background: $white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25);
+}

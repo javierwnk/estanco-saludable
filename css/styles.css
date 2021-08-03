@@ -698,3 +698,25 @@ footer {
       color: #53746B;
       font-size: 1.5rem;
       font-weight: 600; }
+
+.sideCart {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: red;
+  height: 100%;
+  /* header height */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: right 0.3s;
+  z-index: 1000;
+  background: rgba(83, 116, 107, 0.74); }
+
+.previewCart {
+  width: 40%;
+  height: 100%;
+  background: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25); }
