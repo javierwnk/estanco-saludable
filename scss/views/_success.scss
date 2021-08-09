@@ -1,0 +1,48 @@
+.exito {
+    display: flex;
+    width: 580px;
+    height: fit-content;
+    margin: 0 auto;
+    flex-flow: column wrap;
+    padding: 64px 0;
+    justify-content: center;
+    align-content: center;
+
+    .mensaje {
+        font: {
+            size: 1.5rem;
+            weight: 600;
+        }
+        text-align: center;
+    }
+
+    .btnGroup {
+        display: flex;
+        justify-content: space-evenly;
+
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: $white;
+            background: #22C146;
+            border-radius: 13px;
+            width: 234px;
+            text-align: center;
+            font: {
+                weight: 600;
+            }
+        }
+
+        a:first-child {
+            background: #D3FFBC;
+            color: #53746B;
+        }
+
+        a:hover {
+            box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.13);
+        }
+    }
+
+
+}

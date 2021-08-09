@@ -1,5 +1,5 @@
 let cart = []
-
+let total = 0
 const createCart = () => {
 
 
@@ -8,7 +8,6 @@ const createCart = () => {
         // false
     } else {
         let html = ""
-        let total = ""
 
         carrito.forEach((element) => {
             html += `<div class="resumenCard">
@@ -37,3 +36,49 @@ const createCart = () => {
 }
 
 createCart()
+
+// Form del carrito
+
+const validarForm = () => {
+    if(document.getElementById("name").value != "" &&
+    document.getElementById("email").value != "" &&
+    document.getElementById("dni").value != "" &&
+    document.getElementById("phone").value != "" &&
+    document.getElementById("city").value != "" &&
+    document.getElementById("address").value != "") {
+
+        document.getElementById("send").disabled = false
+    } else {
+        document.getElementById("send").disabled = true
+
+    }
+}
+
+document.getElementById("name").addEventListener("input", validarForm)
+document.getElementById("email").addEventListener("input", validarForm)
+document.getElementById("dni").addEventListener("input", validarForm)
+document.getElementById("phone").addEventListener("input", validarForm)
+document.getElementById("city").addEventListener("input", validarForm)
+document.getElementById("address").addEventListener("input", validarForm)
+
+document.getElementById("send").addEventListener("click", (evt) => {
+    evt.preventDefault();
+    sentOrder()
+    window.open("success.html", "_self")
+    localStorage.removeItem("cart")
+})
+
+const sentOrder = () => {
+    // Se completa mensaje de whatsapp
+
+    mensaje = `¡Hola Estanco Saludable!%0ASoy ${document.getElementById("name").value} y me gustaría hacerte este pedido:%0A%0A`
+
+    carrito.forEach(producto => {
+        mensaje += `Producto: *${producto.name}* %0APrecio unitario: $${producto.price}%0ACantidad: ${producto.cantidad}%0ASubtotal: $${producto.cantidad * producto.price}%0A%0A`
+    });
+
+    mensaje += `%0A*Total de la compra: $${total}*%0A%0AMis datos son:%0ADNI: ${document.getElementById("dni").value}%0ATeléfono:  ${document.getElementById("phone").value}%0ADirección: ${document.getElementById("address").value}, ${document.getElementById("city").value}%0AEmail: ${document.getElementById("email").value}%0A¡Muchas gracias!`
+
+    window.open(`https://api.whatsapp.com/send?phone=541173601015&text=${mensaje}`)
+    
+}
