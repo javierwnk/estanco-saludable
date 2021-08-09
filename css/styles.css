@@ -324,6 +324,12 @@ button:focus {
 .divider {
   border: 1px solid rgba(121, 128, 119, 0.7); }
 
+.toast-position {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background: #029924; }
+
 .form {
   width: 445px;
   margin: 80px auto 0 auto; }
@@ -423,8 +429,7 @@ footer {
   display: flex;
   width: 100%;
   height: 878px;
-  margin: 0 auto;
-  align-items: center; }
+  margin: 0 auto; }
 
 .country {
   height: 1000px;
@@ -630,6 +635,11 @@ footer {
     font-size: 3rem;
     text-align: center; }
 
+.noneProduct {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600; }
+
 .cartPreview {
   width: 0;
   height: 100%;
@@ -671,7 +681,8 @@ footer {
         display: grid;
         flex-flow: row nowrap;
         grid-template-areas: "productImg productName productName" "productImg productCant productCant" "productImg productPrice deleteIcon";
-        column-gap: 14px; }
+        column-gap: 14px;
+        margin: 10px 0; }
       .cartPreview .cartPreviewContent .previewProductList .productImg {
         grid-area: productImg;
         width: 165px; }
@@ -709,10 +720,20 @@ footer {
       font-weight: 600; }
     .cartPreview .cartPreviewContent button {
       width: 60%;
-      margin: 24px auto; }
+      margin: 24px auto;
+      display: block; }
+    .cartPreview .cartPreviewContent a {
+      width: 60%;
+      margin: 24px auto;
+      display: block;
+      text-align: center;
+      text-decoration: none; }
+    .cartPreview .cartPreviewContent a:hover {
+      color: white;
+      cursor: pointer; }
 
 .order {
-  height: 100% !important; }
+  height: fit-content !important; }
   .order h1 {
     display: none; }
   .order h2 {
@@ -737,22 +758,36 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    background: #FFF;
+    padding: 84px 0; }
   .order .resumenPedido {
     width: 50%;
-    height: 100vh;
+    height: 100%;
     background: #F2F2F2;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    padding: 32px 0; }
+    padding: 84px 0; }
     .order .resumenPedido .resumenCard {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       width: 80%; }
-      .order .resumenPedido .resumenCard img {
+      .order .resumenPedido .resumenCard img, .order .resumenPedido .resumenCard div {
         width: 165px; }
+      .order .resumenPedido .resumenCard .productCant {
+        position: relative;
+        top: -20px;
+        left: 150px;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        text-align: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+        background: #f95d53;
+        color: #FFF;
+        font-weight: 600; }
       .order .resumenPedido .resumenCard .productName {
         width: 40%;
         color: #4A4A4A;

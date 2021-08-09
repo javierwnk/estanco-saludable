@@ -93,7 +93,7 @@
                 <p>Recibe nuestras recetas y promociones al instante</p>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="suscripto.php" method="POST">
                     <input type="email" name="email" id="email" placeholder="Tu email"> 
                     <button type="submit" class="subscribe">SUSCRÍBETE</button>
                 </form>
@@ -108,22 +108,13 @@
                 <h2>Mi Carrito</h2>
             </div>
 
-            <div class="previewProductList">
-                <div class="previewCard">
-                    <img class="productImg" src="./src/productImageTest.jpg" alt="">
-                    <p class="productName">Aceite de oliva Extra virgen con romero</p>
-                    <p class="productCant">Cantidad: 1</p>
-                    <p class="productPrice">$460</p>
-                    <span class="iconify deleteIcon" data-icon="mdi:trash-can-outline" data-inline="false"></span>
-                </div>
+            <div class="previewProductList" id="previewProductList">
+
             </div>
 
-            <div class="subtotal">
-                <p>Subtotal</p>
-                <p>$460</p>
+            <div id="rest">
+                
             </div>
-
-            <button class="btnPrimary">Continuar</button>
         </div>
     </div>
 

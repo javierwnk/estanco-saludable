@@ -9,17 +9,18 @@ const urlParams = new URLSearchParams(valores);
 
 let idProd = null
 
-if(urlParams.has("id"))
-idProd = urlParams.get("id")
+if (urlParams.has("id"))
+    idProd = urlParams.get("id")
 
 let productoDetalle = ""
 
 const getProducto = () => {
-    fs.doc("products/"+ idProd).get()
-    .then(doc => {
-        productoDetalle = doc.data()
-        buildProducto()
-    })
+    fs.doc("products/" + idProd).get()
+        .then(doc => {
+            productoDetalle = doc.data()
+            window.document.title = doc.data().name       
+            buildProducto()
+        })
 }
 
 const buildProducto = () => {
@@ -50,7 +51,7 @@ const buildProducto = () => {
                     <button id="add">+</button>
             </div>
 
-            <button class="btnPrimary">AÑADIR AL CARRITO</button>
+            <button class="btnPrimary" id="addToCart" onclick="addToCart()">AÑADIR AL CARRITO</button>
 
             <div class="productDescription">
                 <p>${productoDetalle.description}</p>
@@ -64,20 +65,20 @@ const buildProducto = () => {
     let btnAdd = document.querySelector("#add")
     let btnSubstract = document.querySelector("#subtract")
     let quantityInput = document.querySelector("#quantityInput")
-    
+
     btnAdd.addEventListener('click', () => {
         quantityInput.value = parseInt(quantityInput.value) + 1;
     })
-    
+
     btnSubstract.addEventListener('click', () => {
         if (quantityInput.value > 1)
-        quantityInput.value = parseInt(quantityInput.value) - 1;
+            quantityInput.value = parseInt(quantityInput.value) - 1;
     })
 
     // Productos Recomendados
 
     let releatedProducts = productos.filter(element => element.category == productoDetalle.category && element.name !== productoDetalle.name)
-    releatedProducts = releatedProducts.splice(0,3)
+    releatedProducts = releatedProducts.splice(0, 3)
 
     let html = ""
 
@@ -104,5 +105,23 @@ const buildProducto = () => {
 
 getProducto()
 
+// Add to Cart 
 
+const addToCart = () => {
+    let cargaProducto = { cantidad: document.getElementById("quantityInput").value, id: idProd, ...productoDetalle }
 
+    let carrito = JSON.parse(localStorage.getItem("cart"))
+
+    if (carrito === null) {
+        localStorage.setItem("cart", JSON.stringify([cargaProducto]))
+    } else {
+            carrito.push(cargaProducto)
+            localStorage.setItem("cart", JSON.stringify(carrito))
+    }
+
+    let toastHTMLElement = document.getElementById("added-toast");
+    var toastElement = new bootstrap.Toast(toastHTMLElement, { animation: true, delay: 2000 })
+    window.scrollTo(0, 0);
+    toastElement.show()
+
+}

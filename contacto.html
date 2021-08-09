@@ -40,7 +40,7 @@
         <div class="twoColumnSection">
             <div class="contactForm">
                 <h2>Contáctanos</h2>
-                <form class="form" action="">
+                <form class="form" action="contacto.php" method="POST">
                     <input type="text" name="name" id="name" placeholder="Nombre">
                     <input type="email" name="email" id="email" placeholder="Correo electrónico">
                     <input type="tel" name="phone" id="phone" placeholder="Número de teléfono">
@@ -61,22 +61,13 @@
                 <h2>Mi Carrito</h2>
             </div>
 
-            <div class="previewProductList">
-                <div class="previewCard">
-                    <img class="productImg" src="./src/productImageTest.jpg" alt="">
-                    <p class="productName">Aceite de oliva Extra virgen con romero</p>
-                    <p class="productCant">Cantidad: 1</p>
-                    <p class="productPrice">$460</p>
-                    <span class="iconify deleteIcon" data-icon="mdi:trash-can-outline" data-inline="false"></span>
-                </div>
+            <div class="previewProductList" id="previewProductList">
+
             </div>
 
-            <div class="subtotal">
-                <p>Subtotal</p>
-                <p>$460</p>
+            <div id="rest">
+                
             </div>
-
-            <button class="btnPrimary">Continuar</button>
         </div>
     </div>
 
