@@ -27,6 +27,7 @@
                 weight: 600;
                 size: 1.25rem;
             }
+            word-break: break-all;
             
         }
 
@@ -44,3 +45,21 @@
         }
     }
 }
+
+@media all and (max-width: 426px) {
+    .productCard {
+    
+        .productCardInfo {
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 20px 10px;
+    
+            .productCardName {
+                width: 100%;
+                height: fit-content;
+            }
+    
+        }
+    }
+}
+

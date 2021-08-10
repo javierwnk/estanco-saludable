@@ -8,6 +8,7 @@
 .productContent {
     display: flex;
     flex-flow: row nowrap;
+    margin: 0 auto;
 }
 
 .productList {
@@ -15,8 +16,22 @@
     height: fit-content;
     display: grid;
     grid-template-columns: 292px 292px 292px;
-    grid-template-rows: 453px;
+    grid-template-rows: fit-content;
     grid-row-gap: 81px;
     justify-content: space-around;
     margin-bottom: 83px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media all and (max-width: 426px) {
+    .productList {
+        grid-template-columns: 45% 45% ;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .productList {
+        grid-template-columns: 95% ;
+    }
 }

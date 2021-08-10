@@ -61,3 +61,43 @@
         }
     }
 }
+
+@media all and (max-width: 426px) {
+    // Breadcrumb de catálogo
+
+.breadcrumb {
+    ul {
+        padding-left: 0;
+
+        li {
+            margin: 0 10px;
+
+        }
+
+    }
+}
+
+
+// Breadcrumb de producto
+
+.breadcrumbDetalle {
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline;
+            text-transform: capitalize;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: rgba(74, 74, 74, 1);
+                font: {
+                    weight: 300;
+                }
+            }
+        }
+    }
+}
+
+}
