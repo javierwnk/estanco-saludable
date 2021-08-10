@@ -486,6 +486,18 @@ button#send:disabled, button#sendContact:disabled {
     width: 100%;
     border-radius: 13px !important; }
 
+@media all and (max-width: 426px) {
+  .form {
+    width: 100%; }
+    .form input {
+      height: 48px; }
+    .form input, .form textarea {
+      width: 95%;
+      margin: 36px auto; }
+    .form button {
+      width: 100%;
+      border-radius: 13px !important; } }
+
 header {
   width: 100%;
   height: 113px;
@@ -914,6 +926,14 @@ footer {
     font-weight: 600;
     font-size: 3rem;
     text-align: center; }
+
+@media all and (max-width: 426px) {
+  #contactImage {
+    display: none; }
+  .contactForm {
+    margin: 0 auto;
+    width: 90%;
+    padding: 74px 0; } }
 
 .noneProduct {
   text-align: center;

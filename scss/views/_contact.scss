@@ -21,3 +21,17 @@
     }
 
 }
+
+@media all and (max-width: 426px) {
+    #contactImage {
+        display: none;
+    }
+    
+    .contactForm {
+        margin: 0 auto;
+        width: 90%;
+        padding: 74px 0;
+    
+    }
+    
+}
