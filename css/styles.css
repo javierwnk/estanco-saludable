@@ -444,6 +444,20 @@ button#send:disabled, button#sendContact:disabled {
   .releatedProducts .releatedProductList {
     justify-content: space-evenly !important; }
 
+@media all and (max-width: 426px) {
+  .releatedProducts {
+    height: 610px; }
+    .releatedProducts .productCard:first-child {
+      display: none; }
+    .releatedProducts h2 {
+      font-size: 2rem; } }
+
+@media all and (max-width: 426px) and (max-width: 321px) {
+  .releatedProducts {
+    height: 1000px; }
+  h2 {
+    font-size: 1rem; } }
+
 .divider {
   border: 1px solid rgba(121, 128, 119, 0.7); }
 
@@ -837,6 +851,7 @@ footer {
       margin: 0 auto;
       color: #4A4A4A; }
       .detaiLGrid .productDetail .infoProductDetail h2 {
+        word-break: break-all;
         font-weight: bold;
         font-size: 2.25rem;
         line-height: 34px; }
@@ -857,12 +872,31 @@ footer {
         width: 369px;
         height: 60px; }
       .detaiLGrid .productDetail .infoProductDetail .productDescription {
+        word-break: break-all;
         color: #131212;
         font-weight: 300;
         font-size: 1.25rem;
         margin-top: 32px; }
   .detaiLGrid .social {
     grid-area: social; }
+
+@media all and (max-width: 426px) {
+  .detaiLGrid {
+    grid-template-areas: "breadcrumbDetalle" "productDetail";
+    grid-template-columns: auto;
+    grid-template-rows: 50px; }
+    .detaiLGrid .productDetail {
+      flex-flow: column wrap; }
+      .detaiLGrid .productDetail .imageProductDetail {
+        width: 90%; }
+      .detaiLGrid .productDetail .infoProductDetail {
+        width: 90%;
+        margin: 24px auto;
+        color: #4A4A4A; }
+        .detaiLGrid .productDetail .infoProductDetail button.btnPrimary {
+          width: 100%; }
+    .detaiLGrid .social {
+      display: none; } }
 
 #contactImage {
   background: url("../../src/contactImage.png");
