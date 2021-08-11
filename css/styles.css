@@ -941,7 +941,7 @@ footer {
   font-weight: 600; }
 
 .cartPreview {
-  width: 0;
+  width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
@@ -987,6 +987,9 @@ footer {
         grid-area: productImg;
         width: 165px; }
       .cartPreview .cartPreviewContent .previewProductList .productName {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         grid-area: productName;
         color: #4A4A4A;
         font-size: 1.5rem;
@@ -1134,7 +1137,25 @@ footer {
       width: 90%;
       margin: 0 auto; }
     .order .resumenPedido {
-      width: 100%; } }
+      width: 100%; }
+  .noneProduct {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600; }
+  .cartPreview .cartPreviewContent {
+    width: 100%; }
+    .cartPreview .cartPreviewContent .previewProductList .productName {
+      font-size: 1.2rem; }
+    .cartPreview .cartPreviewContent .previewProductList .productPrice {
+      padding: 0px 6px;
+      font-size: 1rem; }
+    .cartPreview .cartPreviewContent .subtotal {
+      font-size: 1.5rem; } }
+
+@media all and (max-width: 376px) {
+  .cartPreview .cartPreviewContent .previewTitle h2 {
+    font-size: 1.5rem;
+    margin-left: 60px; } }
 
 .exito {
   display: flex;
