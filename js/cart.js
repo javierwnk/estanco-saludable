@@ -1,7 +1,7 @@
 let carrito = []
 
 const createCart = () => {
-    carrito = JSON.parse(localStorage.getItem("cart"))
+    carrito = JSON.parse(sessionStorage.getItem("cart"))
 
     if(carrito === null || carrito.length === 0) {
         document.getElementById("previewProductList").innerHTML = `<p class="noneProduct">El carrito se encuentra vacío</p>
@@ -60,9 +60,9 @@ const deleteItem = (index) => {
     carrito.splice(index, 1)
     console.log(carrito)
     if (carrito.length === 0) {
-        localStorage.removeItem("cart")
+        sessionStorage.removeItem("cart")
     } else {
-        localStorage.setItem("cart", JSON.stringify(carrito))
+        sessionStorage.setItem("cart", JSON.stringify(carrito))
     }
 
     createCart()

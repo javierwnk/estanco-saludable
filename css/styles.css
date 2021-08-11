@@ -941,7 +941,7 @@ footer {
   font-weight: 600; }
 
 .cartPreview {
-  width: 100%;
+  width: 0;
   height: 100%;
   position: fixed;
   top: 0;

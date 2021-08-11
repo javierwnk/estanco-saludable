@@ -3,7 +3,7 @@ let total = 0
 const createCart = () => {
 
 
-    carrito = JSON.parse(localStorage.getItem("cart"))
+    carrito = JSON.parse(sessionStorage.getItem("cart"))
     if(carrito === null || carrito.length === 0) {
         // false
     } else {
@@ -65,7 +65,7 @@ document.getElementById("send").addEventListener("click", (evt) => {
     evt.preventDefault();
     sentOrder()
     window.open("success.html", "_self")
-    localStorage.removeItem("cart")
+    sessionStorage.removeItem("cart")
 })
 
 const sentOrder = () => {
