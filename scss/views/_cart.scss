@@ -1,3 +1,4 @@
+// Cart Flotante
 .noneProduct {
     text-align: center;
     font: {
@@ -148,10 +149,13 @@
     }
 }
 
-
+// cart.html
 
 .order {
-    height: fit-content !important;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
 
     h1 {
         display: none;
@@ -287,3 +291,31 @@
 
     
 }
+
+@media all and (max-width: 426px) {
+
+// cart.html
+
+    .order {
+        flex-flow: column wrap;
+
+
+        form {
+            margin: 24px auto 0 auto !important;
+        }
+
+        .datosPedido {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .resumenPedido {
+            width: 100%;
+
+        }
+
+        
+    }
+
+
+} // fin Media
