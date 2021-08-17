@@ -14,12 +14,12 @@ let slide = [{title: "Aceite de Oliva",
             texto: "Acompaña tus desayunos y postres con las mieles e infusiones libre de químicos.",
             idCategoria: "mieles"},
 
-            {title: "Tea Boundies", 
+            {title: "Infusiones", 
             bgImage: "../src/bg1.jpg",
             descriptionImage: "../src/bg1-1.png",
             imagePosition: "80%",
-            texto: "Prueba la excelencia con los aceites de oliva y saborizados de Doña juana",
-            idCategoria: "tea-blondies"}
+            texto: "Disfruta de lo mejor de tus meriendas o desayunos con un buen té natural sin aditivos artificiales.",
+            idCategoria: "infusiones"}
             ]
 
 const changeSlide = (operator) => {

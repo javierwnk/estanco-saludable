@@ -110,13 +110,13 @@ getProducto()
 const addToCart = () => {
     let cargaProducto = { cantidad: document.getElementById("quantityInput").value, id: idProd, ...productoDetalle }
 
-    let carrito = JSON.parse(localStorage.getItem("cart"))
+    let carrito = JSON.parse(sessionStorage.getItem("cart"))
 
     if (carrito === null) {
-        localStorage.setItem("cart", JSON.stringify([cargaProducto]))
+        sessionStorage.setItem("cart", JSON.stringify([cargaProducto]))
     } else {
             carrito.push(cargaProducto)
-            localStorage.setItem("cart", JSON.stringify(carrito))
+            sessionStorage.setItem("cart", JSON.stringify(carrito))
     }
 
     let toastHTMLElement = document.getElementById("added-toast");

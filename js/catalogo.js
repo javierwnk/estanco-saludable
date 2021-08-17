@@ -64,7 +64,7 @@ id = urlParams.get("id")
             productList(id)
             break;
     
-        case "tea-blondies":
+        case "infusiones":
             document.getElementById("tea").classList.add("active")
             productList(id)
             break;
