@@ -1,0 +1,53 @@
+.postCard {
+    box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17);
+    background: $white;
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+
+    .cardImage {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .postCardInfo {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        padding: 20px 10px;
+        box-sizing: border-box;
+
+        .postCardName {
+            width: 100%;
+            font: {
+                weight: 600;
+                size: 1.25rem;
+            }
+            word-break: break-all;
+            
+        }
+
+    }
+}
+
+@media all and (max-width: 426px) {
+    .postCard {
+    
+        .postCardInfo {
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 20px 10px;
+    
+            .postCardName {
+                width: 100%;
+                height: fit-content;
+            }
+    
+        }
+    }
+}
+

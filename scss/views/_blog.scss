@@ -1,0 +1,28 @@
+.blogContent {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+}
+
+.postList {
+    width: 95%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 292px 292px 292px;
+    grid-template-rows: fit-content;
+    grid-row-gap: 81px;
+    justify-content: space-around;
+    margin: 83px auto;
+}
+
+@media all and (max-width: 426px) {
+    .postList {
+        grid-template-columns: 45% 45% ;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .postList {
+        grid-template-columns: 95% ;
+    }
+}

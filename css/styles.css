@@ -467,6 +467,37 @@ button#send:disabled, button#sendContact:disabled {
   right: 20px;
   background: #029924; }
 
+.postCard {
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17);
+  background: #FFF; }
+  .postCard a {
+    text-decoration: none;
+    color: #131212; }
+  .postCard .cardImage {
+    width: 100%; }
+    .postCard .cardImage img {
+      width: 100%; }
+  .postCard .postCardInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 20px 10px;
+    box-sizing: border-box; }
+    .postCard .postCardInfo .postCardName {
+      width: 100%;
+      font-weight: 600;
+      font-size: 1.25rem;
+      word-break: break-all; }
+
+@media all and (max-width: 426px) {
+  .postCard .postCardInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 20px 10px; }
+    .postCard .postCardInfo .postCardName {
+      width: 100%;
+      height: fit-content; } }
+
 .form {
   width: 445px;
   margin: 80px auto 0 auto; }
@@ -1200,3 +1231,38 @@ footer {
       align-items: center; }
       .exito .btnGroup a {
         margin: 12px 0; } }
+
+.blogContent {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto; }
+
+.postList {
+  width: 95%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 292px 292px 292px;
+  grid-template-rows: fit-content;
+  grid-row-gap: 81px;
+  justify-content: space-around;
+  margin: 83px auto; }
+
+@media all and (max-width: 426px) {
+  .postList {
+    grid-template-columns: 45% 45%; } }
+
+@media all and (max-width: 320px) {
+  .postList {
+    grid-template-columns: 95%; } }
+
+.postContent {
+  width: 90%;
+  margin: 84px auto; }
+  .postContent .fecha {
+    text-align: right; }
+  .postContent img {
+    display: block;
+    width: 100%;
+    padding: 24px 0; }
+  .postContent .cuerpoPosteo {
+    width: 90%; }
