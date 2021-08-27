@@ -10,8 +10,23 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+    
+
     <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/cart.js"></script>
+    <script defer src="./js/product.js"></script>
     <script defer src="./js/slider-productos.js"></script>
+    <script defer src="./js/subscribeValidator.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -31,7 +46,7 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a class="icon" href="cart.html"><span class="iconify" data-icon="mdi:cart-outline"
+                <li><a class="icon" id="cartIcon"><span class="iconify" data-icon="mdi:cart-outline"
                             data-inline="false"></span></a></li>
             </ul>
         </nav>
@@ -55,7 +70,7 @@
                     <img src="./src/slide2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./src/slide3.jpg" class="d-block w-100" alt="...">
+                    <img src="./src/slide3.png" class="d-block w-100" alt="...">
                 </div>
             </div>
 
@@ -95,8 +110,10 @@
                     <h2 id="slideTitle">Aceite de Oliva</h2>
 
                     <div class="sliderControlers">
-                        <div id="controlUp"><span class="iconify" data-icon="mdi:chevron-up" data-inline="false"></span></div>
-                        <div id="controlDown"><span class="iconify" data-icon="mdi:chevron-down" data-inline="false"></span></div>
+                        <div id="controlUp"><span class="iconify" data-icon="mdi:chevron-up" data-inline="false"></span>
+                        </div>
+                        <div id="controlDown"><span class="iconify" data-icon="mdi:chevron-down"
+                                data-inline="false"></span></div>
                     </div>
                 </div>
 
@@ -106,20 +123,9 @@
                     </p>
                 </div>
 
-                <div class="products">
-                    <div class="product" style="background-color: aqua;">
+                <div class="products" id="sliderListProduct">
 
-                    </div>
-                    <div class="product" style="background-color: rosybrown;">
-
-                    </div>
-                    <div class="product" style="background-color: salmon;">
-
-                    </div>
-                    <div class="viewMore" style="background-color: #F3F3F3;">
-                        <span class="iconify" data-icon="mdi:arrow-right" data-inline="false"></span>
-                        <p>Ver todos</p>
-                    </div>
+                
                 </div>
 
             </div>
@@ -162,7 +168,8 @@
             <div class="productInfoCard">
                 <div id="imgQuality"></div>
                 <h4>Descubre productos de calidad</h4>
-                <p>Apostamos por las marcas emprendedoras del país con productos de alta calidad hechos con mucho amor.</p>
+                <p>Apostamos por las marcas emprendedoras del país con productos de alta calidad hechos con mucho amor.
+                </p>
             </div>
             <div class="productInfoCard borderVerde">
                 <div id="imgEcofriendly"></div>
@@ -189,10 +196,10 @@
             </div>
 
             <div class="images">
-                <div><img src="./src/recetas-1.jpg" alt="Imagen de comida"></div>
-                <div><img src="./src/recetas-2.jpg" alt="Imagen de comida"></div>
-                <div><img src="./src/recetas-3.jpg" alt="Imagen de comida"></div>
-                <div><img src="./src/recetas-4.jpg" alt="Imagen de comida"></div>
+                <div id="img1"><img src="./src/recetas-1.jpg" alt="Imagen de comida"></div>
+                <div id="img2"><img src="./src/recetas-2.jpg" alt="Imagen de comida"></div>
+                <div id="img3"><img src="./src/recetas-3.jpg" alt="Imagen de comida"></div>
+                <div id="img4"><img src="./src/recetas-4.jpg" alt="Imagen de comida"></div>
             </div>
         </div>
 
@@ -202,44 +209,51 @@
                 <p>Recibe nuestras recetas y promociones al instante</p>
             </div>
             <div>
-                <form action="" method="post">
-                    <input type="email" name="email" id="email" placeholder="Tu email"> 
-                    <button type="submit" class="subscribe">SUSCRÍBETE</button>
+                <form action="suscripto.php" method="POST">
+                    <input type="email" name="email" id="email" placeholder="Tu email">
+                    <button type="submit" disabled id="handleSuscribe" class="subscribe">SUSCRÍBETE</button>
                 </form>
             </div>
         </div>
     </main>
 
-    <div class="sideCart">
-
-        <div class="previewCart">
-            <div class="title">
-                <span class="iconify" data-icon="mdi:chevron-left" data-inline="false"></span>
+    <div class="cartPreview" id="cartPreview">
+        <div class="cartPreviewContent">
+            <div class="previewTitle">
+                <span class="iconify back" id="closeBtn" data-icon="mdi:chevron-left" data-inline="false"></span>
                 <h2>Mi Carrito</h2>
             </div>
 
-        </div>
+            <div class="previewProductList" id="previewProductList">
 
+            </div>
+
+            <div id="rest">
+                
+            </div>
+        </div>
     </div>
+
+
 
     <footer>
         <div class="contactInfo">
-            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a href="tel:+541158855912"> 011 5885-5912 </a></p>
+            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a
+                    href="tel:+541158855912"> 011 5885-5912 </a></p>
             <p class="city">Ciudad de Buenos Aires, Argentina</p>
         </div>
 
         <div><img src="./src/logo-blanco.svg" alt="Logo Estanco Saludable"></div>
-        
+
         <div class="socialLinks">
             <p class="followGreen">Seguínos en nuestras redes sociales</p>
-            
+
             <ul>
                 <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp"
-                            data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp" data-inline="false"></span></a></li>
             </ul>
         </div>
     </footer>

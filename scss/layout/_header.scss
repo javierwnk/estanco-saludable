@@ -38,9 +38,45 @@ header {
                 a:hover {
                     color: $darkGreen;
                 }
+
+                .icon:hover {
+                    cursor: pointer;
+                }
             
             }
         }
     }
 }
 
+@media all and (max-width: 426px) {
+    header {
+        height: fit-content;
+        padding: 12px 0;
+    
+        img {
+            display: block;
+        }
+    
+        nav {
+            margin: 0 auto;
+            padding-top: 20px;
+
+            ul {
+                padding: 0;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: center;
+    
+                li {
+                    margin: 5px 26px;
+                    
+                }
+            }
+        }
+    }
+
+
+    
+
+} // Fin media

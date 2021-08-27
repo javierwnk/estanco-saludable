@@ -14,12 +14,12 @@ let slide = [{title: "Aceite de Oliva",
             texto: "Acompaña tus desayunos y postres con las mieles e infusiones libre de químicos.",
             idCategoria: "mieles"},
 
-            {title: "Tea Boundies", 
-            bgImage: "../src/bg1.jpg",
-            descriptionImage: "../src/bg1-1.png",
+            {title: "Infusiones", 
+            bgImage: "../src/bg3.png",
+            descriptionImage: null,
             imagePosition: "80%",
-            texto: "Prueba la excelencia con los aceites de oliva y saborizados de Doña juana",
-            idCategoria: "tea-blondies"}
+            texto: "Disfruta de lo mejor de tus meriendas o desayunos con un buen té natural sin aditivos artificiales.",
+            idCategoria: "infusiones"}
             ]
 
 const changeSlide = (operator) => {
@@ -39,8 +39,7 @@ const changeSlide = (operator) => {
     document.getElementById("bgSliderProducts").style.backgroundImage = `url(${slide[currentSlide].bgImage})`
     document.getElementById("bgProductInfo").style.backgroundImage = `url(${slide[currentSlide].descriptionImage})`
     document.getElementById("bgProductInfo").style.backgroundPositionY = `${slide[currentSlide].imagePosition}`
-
-
+    slider(slide[currentSlide].idCategoria)
 
 }
 

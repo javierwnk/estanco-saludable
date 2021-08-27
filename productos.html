@@ -10,8 +10,23 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+    
+
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/slider-productos.js"></script>
+    <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/cart.js"></script>
+    <script defer src="./js/product.js"></script>
+    <script defer src="./js/catalogo.js"></script>
+    <script defer src="./js/subscribeValidator.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -31,7 +46,7 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a class="icon" href="cart.html"><span class="iconify" data-icon="mdi:cart-outline"
+                <li><a class="icon" id="cartIcon"><span class="iconify" data-icon="mdi:cart-outline"
                             data-inline="false"></span></a></li>
             </ul>
         </nav>
@@ -47,54 +62,15 @@
             <div class="breadcrumb">
                 <ul>
                     <li>Productos <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span></li>
-                    <li><a href="">Todos</a></li>
-                    <li><a href="" class="active">Aceites</a></li>
-                    <li><a href="">Miel</a></li>
-                    <li><a href="">Tea Blondie</a></li>
+                    <li><a id="allProducts" href="productos.html">Todos</a></li>
+                    <li><a id="aceites" href="productos.html?id=aceites">Aceites</a></li>
+                    <li><a id="mieles" href="productos.html?id=mieles">Miel</a></li>
+                    <li><a id="tea" href="productos.html?id=infusiones">Infusiones</a></li>
                 </ul>    
             </div>
 
             <div class="productContent">
-                <div class="productList">
-
-                    <div class="productCard">
-                        <a href="">
-                            <div class="cardImage">
-                                <img src="./src/productImageTest.jpg" alt="">
-                            </div>
-
-                            <div class="productCardInfo">
-                                <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
-                                <p class="productCardPrice">$400</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="productCard">
-                        <a href="">
-                            <div class="cardImage">
-                                <img src="./src/productImageTest.jpg" alt="">
-                            </div>
-
-                            <div class="productCardInfo">
-                                <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
-                                <p class="productCardPrice">$400</p>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="productCard">
-                        <a href="">
-                            <div class="cardImage">
-                                <img src="./src/productImageTest.jpg" alt="">
-                            </div>
-
-                            <div class="productCardInfo">
-                                <p class="productCardName">Aceite de oliva Extra virgen con romero</p>
-                                <p class="productCardPrice">$400</p>
-                            </div>
-                        </a>
-                    </div>
+                <div class="productList" id="catalogProductList">
 
 
                 </div>
@@ -118,13 +94,31 @@
                 <p>Recibe nuestras recetas y promociones al instante</p>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="suscripto.php" method="POST">
                     <input type="email" name="email" id="email" placeholder="Tu email"> 
-                    <button type="submit" class="subscribe">SUSCRÍBETE</button>
+                    <button type="submit" disabled id="handleSuscribe" class="subscribe">SUSCRÍBETE</button>
                 </form>
             </div>
         </div>
     </main>
+
+    <div class="cartPreview" id="cartPreview">
+        <div class="cartPreviewContent">
+            <div class="previewTitle">
+                <span class="iconify back" id="closeBtn" data-icon="mdi:chevron-left" data-inline="false"></span>
+                <h2>Mi Carrito</h2>
+            </div>
+
+            <div class="previewProductList" id="previewProductList">
+
+            </div>
+
+            <div id="rest">
+                
+            </div>
+        </div>
+    </div>
+
 
     <footer>
         <div class="contactInfo">

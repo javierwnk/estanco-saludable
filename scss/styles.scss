@@ -15,6 +15,8 @@
 @import './components/inputs';
 @import './components/releatedProducts';
 @import './components/divider';
+@import './components/toast';
+@import './components/postCard';
 
 
 
@@ -31,3 +33,6 @@
 @import './views/productDetail';
 @import './views/contact';
 @import './views/cart';
+@import './views/success';
+@import './views/blog';
+@import './views/post';

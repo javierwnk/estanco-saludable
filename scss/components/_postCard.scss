@@ -1,4 +1,4 @@
-.productCard {
+.postCard {
     box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.17);
     background: $white;
     a {
@@ -14,15 +14,15 @@
         }
     }
 
-    .productCardInfo {
+    .postCardInfo {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: column nowrap;
         justify-content: space-around;
         padding: 20px 10px;
         box-sizing: border-box;
 
-        .productCardName {
-            width: 200px;
+        .postCardName {
+            width: 100%;
             font: {
                 weight: 600;
                 size: 1.25rem;
@@ -31,30 +31,18 @@
             
         }
 
-        .productCardPrice {
-            background-color: #029924;
-            height: fit-content;
-            font: {
-                weight: 600;
-                size: 1.25rem;
-            }
-            color: $white;
-            padding: 2px 15px 2px 8px;
-            box-sizing: border-box;
-
-        }
     }
 }
 
 @media all and (max-width: 426px) {
-    .productCard {
+    .postCard {
     
-        .productCardInfo {
+        .postCardInfo {
             display: flex;
             flex-flow: column nowrap;
             padding: 20px 10px;
     
-            .productCardName {
+            .postCardName {
                 width: 100%;
                 height: fit-content;
             }

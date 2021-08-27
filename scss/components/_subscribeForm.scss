@@ -40,3 +40,19 @@
         margin-bottom: 44px;
     }
 }
+
+@media all and (max-width: 426px) {
+    .subscribeForm {
+    
+        height: 350px;
+        
+        input {
+            width: 90%;
+        }
+    
+        button {
+            margin-top: 20px;
+        }
+    }
+    
+}

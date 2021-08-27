@@ -1,4 +1,4 @@
-form {
+.form {
     width: 445px;
     margin: 80px auto 0 auto;
 
@@ -26,3 +26,22 @@ form {
     }
 }
 
+@media all and (max-width: 426px) {
+    .form {
+        width: 100%;
+        input {
+            height: 48px;
+        }
+    
+        input, textarea {
+
+            width: 95%;
+            margin: 36px auto;
+        }
+                
+        button {
+            width: 100%;
+            border-radius: 13px !important;
+        }
+    }
+}

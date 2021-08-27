@@ -12,6 +12,7 @@
 
 // Sección de industria nacional
 
+
 .nacional {
     height: 426px;
     margin-top: -35px;
@@ -197,3 +198,191 @@
     }
 }
 
+
+@media all and (max-width: 426px) {
+
+ // Imagen del país de la home
+
+.country {
+    height: 1000px;
+    width: 100%;
+    background: url("../src/argDotted.png") no-repeat;
+    background-position: left;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.1;
+    display: none;
+}
+
+// Sección de industria nacional
+
+.nacional {
+    height: 230px;
+    margin-top: 0px;
+
+    img {
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .imagesBackground {
+        display: none;  
+    }
+
+    // Texto "Confiamos en la producción nacional"
+
+    .textImage {
+        width: 100%;
+        font: {
+            size: 1.5rem;
+        }
+        text-shadow: 0px 2px 2px #000000;
+        line-height: 25px;
+        right: 0;
+        z-index: 2;
+        margin: 120px auto 0 auto;
+        text-align: center;
+    }    
+    
+}
+
+
+// Sección how to de la home
+
+
+.howTo {
+    height: fit-content;
+    padding: 24px 0;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+
+    .howToInfo {
+        padding: 0 0 0 10px;
+
+        h3 {
+            font: {
+                size: 2rem
+            }
+        }
+
+        p {
+            font: {
+                size: 1rem;
+            }
+        }
+    }
+
+    .howToImage {
+        display: none;
+    }
+
+    button {
+        font: {
+            size: 1rem;
+        }
+    }
+
+}
+
+.productInfo {
+    height: fit-content;
+    display: flex;
+    flex-flow: column wrap;
+
+    .productInfoCard {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .borderVerde {
+        border-left: 0px solid $green;
+        border-right: 0px solid $green;
+        border-top: 2px solid $green;
+        border-bottom: 2px solid $green;
+
+    }
+
+
+}
+
+.recetas {
+    height: fit-content;
+    padding: 24px 10px;
+
+    .action {
+        height: 279px;
+        flex-flow: column wrap;
+
+        p:first-child {
+            font: {
+                size: 2.5rem;
+            }
+            line-height: 0;
+        }
+
+        .greenTextBold {
+            font: {
+                size: 2rem;
+            }
+        }
+
+        .thinParagraph {
+            font: {
+                size: 1rem;
+            }
+        }
+
+        button {
+            font: {
+                size: 1rem;
+            }
+        }
+        
+    }
+
+    .images {
+        display: none;
+    }
+
+}
+
+
+} // Fin media
+
+@media all and (max-width: 320px) {
+
+    .nacional {
+        .textImage {
+            margin: 90px auto 0 auto;
+        }   
+    }
+} // Fin media
+
+@media all and (max-width: 1025px) {
+    .recetas {
+       
+        .images {
+            
+            #img4 {
+                display: none;
+            }
+            
+        }
+    }
+    
+} // Fin media 
+
+
+@media all and (max-width: 768px) {
+    .recetas {
+       
+        .images {
+            
+            #img4, #img3 {
+                display: none;
+            }
+            
+        }
+    }
+    
+} // Fin media 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
+    <title>Catálogo</title>
     <script defer src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,13 +19,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
-
+    
 
     <link rel="stylesheet" href="./css/styles.css">
-    <script defer src="./js/firebase.js"></script>
     <script defer src="./js/cart.js"></script>
-    <script defer src="./js/product.js"></script>
-    <script defer src="./js/detalle.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -33,6 +30,24 @@
 </head>
 
 <body>
+
+<?php 
+$nya = $_POST['name'];
+$email = $_POST['email2'];
+$phone = $_POST['phone'];
+$mensaje = $_POST ['message'];
+
+$mimail="javierwnk@gmail.com";
+
+$cuerpoemail = "Ha recibido una consulta de ".$nya."\r\n"."Email: ".$email."\r\n"."Telefono de contacto: ".$phone."\r\n"."Mensaje: ".$mensaje;
+$cuerpoenvio = "Se ha enviado su consulta a Estanco Saludable "."\r\n"."Teléfono: ".$phone."\r\n"."Mensaje: ".$mensaje."\r\n"."Le responderemos a la brevedad"."\r\n"."Por favor, no responda este mensaje";
+$respuesta ="From: $nya <$email>";
+$respuestaenvio ="From: Estanco Saludable <javierwnk@gmail.com>";
+
+mail ($mimail, "Ha recido una nueva consulta", $cuerpoemail, $respuesta);
+mail ($email, "Recibimos tu consulta - Estanco Saludable", $cuerpoenvio, $respuestaenvio);
+?>
+
     <header>
         <a href="index.html">
             <h1>Estanco Saludable</h1>
@@ -52,38 +67,19 @@
     </header>
 
     <main>
-        <div class="subpagesHero" id="productHero">
-            <p>Disfruta haciendo recetas con Productos Gourmet</p>
-        </div>
 
-        <div class="content detaiLGrid">
-
-            <div class="breadcrumbDetalle" id="breadcrumbDetalle">
-
+        <div class="exito">
+            <div class="mensaje">
+                <h2>Hemos recibido tu consulta <br>
+                Pronto nos comunicaremos contigo.
+                </h2>
             </div>
 
+            <img src="./src/success.png" alt="Imagen proceso exitoso">
 
-            <div class="productDetail" id="productDetail">
-
-            </div>
-
-            <div class="social">
-                <ul>
-                    <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
-                    <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
-                    <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
-                    <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
-                    <li><a class="wsp" href=""><span class="iconify" data-icon="mdi:whatsapp"
-                                data-inline="false"></span></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="releatedProducts">
-            <h2>Productos Recomendados</h2>
-
-            <div class="releatedProductList productList" id="releatedProductList">
-
+            <div class="btnGroup">
+                <a class="" href="">Ver recetas</a>
+                <a class="" href="">Ver productos</a>
             </div>
         </div>
 
@@ -101,41 +97,30 @@
             </div>
 
             <div id="rest">
-
+                
             </div>
-        </div>
-    </div>
-
-    <div id="added-toast" class="toast align-items-center text-white border-0 toast-position" role="alert"
-        aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                Producto agregado correctamente
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                aria-label="Close"></button>
         </div>
     </div>
 
 
     <footer>
         <div class="contactInfo">
-            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a
-                    href="tel:+541158855912"> 011 5885-5912 </a></p>
+            <p class="phoneNumber"><span class="iconify" data-icon="mdi:phone" data-inline="false"></span> <a href="tel:+541158855912"> 011 5885-5912 </a></p>
             <p class="city">Ciudad de Buenos Aires, Argentina</p>
         </div>
 
         <div><img src="./src/logo-blanco.svg" alt="Logo Estanco Saludable"></div>
-
+        
         <div class="socialLinks">
             <p class="followGreen">Seguínos en nuestras redes sociales</p>
-
+            
             <ul>
                 <li><a href=""><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:youtube" data-inline="false"></span></a></li>
                 <li><a href=""><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span></a></li>
-                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp" data-inline="false"></span></a></li>
+                <li><a href=""><span class="iconify" data-icon="mdi:whatsapp"
+                            data-inline="false"></span></a></li>
             </ul>
         </div>
     </footer>

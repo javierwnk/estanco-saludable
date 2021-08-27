@@ -1,17 +1,10 @@
-.content {
-    width: 90%;
-    margin: 0 auto;;
-    height: fit-content;
-    padding: 33px 0px;
-}
-
-.productContent {
+.blogContent {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 auto;
 }
 
-.productList {
+.postList {
     width: 95%;
     height: fit-content;
     display: grid;
@@ -19,19 +12,17 @@
     grid-template-rows: fit-content;
     grid-row-gap: 81px;
     justify-content: space-around;
-    margin-bottom: 83px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 83px auto;
 }
 
 @media all and (max-width: 426px) {
-    .productList {
+    .postList {
         grid-template-columns: 45% 45% ;
     }
 }
 
 @media all and (max-width: 320px) {
-    .productList {
+    .postList {
         grid-template-columns: 95% ;
     }
 }

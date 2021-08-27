@@ -76,3 +76,36 @@ footer {
     }
 
 }
+
+@media all and (max-width: 426px) {
+    footer {
+        height: 500px;
+        flex-flow: column wrap;
+    
+        .contactInfo {
+    
+            width: 100%;
+            padding: 25px 0;
+    
+            .phoneNumber, .city {
+                text-align: center;
+            }
+            
+        }
+    
+        .socialLinks {
+    
+            width: 100%;
+    
+            .followGreen {
+                text-align: center;
+            }
+            
+            ul {
+                margin: 0 auto;
+                float: none;
+            }
+        }
+    
+    }
+} // Fin Media

@@ -1,5 +1,164 @@
+// Cart Flotante
+.noneProduct {
+    text-align: center;
+    font: {
+        size: 2rem;
+        weight: 600;
+    }
+}
+
+
+.cartPreview {
+	width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba($color: #53746B, $alpha: 0.74);
+    overflow-x: hidden;
+    transition: 0.3s;
+
+
+    .cartPreviewContent {
+        width: 50%;
+        height: fit-content;
+        background: $white;
+        position: absolute;
+        right: 0;
+        box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-flow: column nowrap;
+
+        .previewTitle {
+            color:#53746B;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            width: 100%;
+            font: {
+                size: 3rem;
+                weight: 700;
+            }
+            padding: 32px;
+
+            .back:hover {
+                cursor: pointer;
+            }
+
+            h2 {
+                width: fit-content;
+                margin-left: 160px;
+            }
+
+        }
+
+        .previewProductList {
+            width: 95%;
+            height: fit-content;
+            margin: 0 auto;
+            
+            .previewCard {
+                display: grid;
+                flex-flow: row nowrap;
+                grid-template-areas: "productImg productName productName"
+                "productImg productCant productCant"
+                "productImg productPrice deleteIcon";
+                column-gap: 14px;
+                margin: 10px 0;
+            }
+
+            .productImg {
+                grid-area: productImg;
+                width: 165px;
+            }
+
+            .productName {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                grid-area: productName;
+                color: #4A4A4A;
+                font: {
+                    size: 1.5rem;
+                    weight: 600;
+                }
+            }
+
+            .productCant {
+                grid-area: productCant;
+                color: #4A4A4A;
+                font: {
+                    size: 1rem;
+                    weight: 600;
+                }
+            }
+
+            .productPrice {
+                grid-area: productPrice;
+                background: #029924;
+                width: fit-content;
+                padding: 3px 12px;
+                color: $white;
+                font: {
+                    weight: 600;
+                    size: 1.25rem;
+                }
+            }
+
+            .deleteIcon {
+                grid-area: deleteIcon;
+                font: {
+                    size: 1.5rem;
+                }
+                color: #626262;
+            }
+
+            .deleteIcon:hover {
+                cursor: pointer;
+            }
+        }
+
+        .subtotal {
+            width: 95%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            color: #53746B;
+            font: {
+                size: 2.25rem;
+                weight: 600;
+            }
+        }
+        button {
+            width: 60%;
+            margin: 24px auto;
+            display: block;
+        }
+
+        a {
+            width: 60%;
+            margin: 24px auto;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+}
+
+// cart.html
+
 .order {
-    height: 100% !important;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
 
     h1 {
         display: none;
@@ -34,16 +193,18 @@
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
+        background: $white;
+        padding: 84px 0;
     }
 
     .resumenPedido {
         width: 50%;
-        height: 100vh;
+        height: 100%;
         background: #F2F2F2;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-        padding: 32px 0;
+        padding: 84px 0;
 
         .resumenCard {
             display: flex;
@@ -51,8 +212,25 @@
             justify-content: space-between;
             width: 80%;
 
-            img {
+            img, div {
                 width: 165px;
+            }
+
+            .productCant {
+                position: relative;
+                top: -20px;
+                left: 150px;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                text-align: center;
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+                background: rgba(249, 93, 83, 1);
+                color: $white;
+                font: {
+                    weight: 600;
+                }
+                
             }
 
             .productName {
@@ -117,28 +295,91 @@
     
 }
 
-.sideCart {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: red;
-    height: 100%;
-    /* header height */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: right 0.3s;
-    z-index: 1000;
+@media all and (max-width: 426px) {
 
-    background: rgba($color: #53746b, $alpha: 0.74);
-}
+// cart.html
+
+    .order {
+        flex-flow: column wrap;
 
 
-.previewCart {
-    width: 40%;
-    height: 100%;
-    background: $white;
-    position: absolute;
-    right: 0;
-    top: 0;
-    box-shadow: -7px 4px 15px rgba(0, 0, 0, 0.25);
+        form {
+            margin: 24px auto 0 auto !important;
+        }
+
+        .datosPedido {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .resumenPedido {
+            width: 100%;
+
+        }
+
+        
+    }
+
+    // Cart Flotante
+    .noneProduct {
+        text-align: center;
+        font: {
+            size: 2rem;
+            weight: 600;
+        }
+    }
+
+
+    .cartPreview {
+
+        .cartPreviewContent {
+            width: 100%;
+
+            .previewProductList {
+
+                .productName {
+                    font: {
+                        size: 1.2rem;
+                    }
+                }
+
+                .productPrice {
+                    padding: 0px 6px;
+                    font: {
+                        size: 1rem;
+                    }
+                }
+            }
+
+            .subtotal {
+                font: {
+                    size: 1.5rem;
+                }
+            }
+
+        }
+    }
+
+
+} // fin Media
+
+@media all and (max-width: 376px) {
+    .cartPreview {
+    
+        .cartPreviewContent {
+    
+            .previewTitle {
+        
+                h2 {
+                    font: {
+                        size: 1.5rem;
+                    }
+                    margin-left: 60px;
+                }
+    
+            }
+        
+        }
+    }
+    
 }

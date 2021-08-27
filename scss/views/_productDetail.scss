@@ -28,6 +28,7 @@
             color: #4A4A4A;
 
             h2 {
+                word-break: break-all;
                 font: {
                     weight: bold;
                     size: 2.25rem;
@@ -63,6 +64,7 @@
             }
 
             .productDescription {
+                word-break: break-all;
                 color: $black;
                 font: {
                     weight: 300;
@@ -77,3 +79,38 @@
         grid-area: social;
     }
 }
+
+@media all and (max-width: 426px) {
+
+    .detaiLGrid {
+        grid-template-areas: "breadcrumbDetalle"
+        "productDetail";
+        grid-template-columns: auto;
+        grid-template-rows: 50px;
+        
+        .productDetail {
+            flex-flow: column wrap;
+            
+            .imageProductDetail {
+                width: 90%;
+            }
+    
+            .infoProductDetail {
+                width: 90%;
+                margin: 24px auto;
+                color: #4A4A4A;
+    
+
+                button.btnPrimary {
+                    width: 100%;
+                }
+
+            }
+        }
+    
+        .social {
+            display: none;
+        }
+    }
+
+} // Fin media
