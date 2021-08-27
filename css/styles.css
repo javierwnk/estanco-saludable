@@ -843,6 +843,14 @@ footer {
   .nacional .textImage {
     margin: 90px auto 0 auto; } }
 
+@media all and (max-width: 1025px) {
+  .recetas .images #img4 {
+    display: none; } }
+
+@media all and (max-width: 768px) {
+  .recetas .images #img4, .recetas .images #img3 {
+    display: none; } }
+
 .content {
   width: 90%;
   margin: 0 auto;

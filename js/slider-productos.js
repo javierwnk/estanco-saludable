@@ -15,8 +15,8 @@ let slide = [{title: "Aceite de Oliva",
             idCategoria: "mieles"},
 
             {title: "Infusiones", 
-            bgImage: "../src/bg1.jpg",
-            descriptionImage: "../src/bg1-1.png",
+            bgImage: "../src/bg3.png",
+            descriptionImage: null,
             imagePosition: "80%",
             texto: "Disfruta de lo mejor de tus meriendas o desayunos con un buen té natural sin aditivos artificiales.",
             idCategoria: "infusiones"}

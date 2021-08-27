@@ -12,6 +12,7 @@
 
 // Sección de industria nacional
 
+
 .nacional {
     height: 426px;
     margin-top: -35px;
@@ -355,4 +356,33 @@
             margin: 90px auto 0 auto;
         }   
     }
-}
+} // Fin media
+
+@media all and (max-width: 1025px) {
+    .recetas {
+       
+        .images {
+            
+            #img4 {
+                display: none;
+            }
+            
+        }
+    }
+    
+} // Fin media 
+
+
+@media all and (max-width: 768px) {
+    .recetas {
+       
+        .images {
+            
+            #img4, #img3 {
+                display: none;
+            }
+            
+        }
+    }
+    
+} // Fin media 
