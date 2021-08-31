@@ -444,7 +444,7 @@ button#send:disabled, button#sendContact:disabled {
   .releatedProducts .releatedProductList {
     justify-content: space-evenly !important; }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 764px) {
   .releatedProducts {
     height: 610px; }
     .releatedProducts .productCard:first-child {
@@ -452,7 +452,7 @@ button#send:disabled, button#sendContact:disabled {
     .releatedProducts h2 {
       font-size: 2rem; } }
 
-@media all and (max-width: 426px) and (max-width: 321px) {
+@media all and (max-width: 764px) and (max-width: 321px) {
   .releatedProducts {
     height: 1000px; }
   h2 {
