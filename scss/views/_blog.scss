@@ -15,7 +15,7 @@
     margin: 83px auto;
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 767px) {
     .postList {
         grid-template-columns: 45% 45% ;
     }
@@ -26,3 +26,11 @@
         grid-template-columns: 95% ;
     }
 }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+    .postList {
+        grid-template-columns: 30% 30% 30%;
+    }
+
+} // fin media
