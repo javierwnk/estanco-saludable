@@ -114,3 +114,23 @@
     }
 
 } // Fin media
+
+@media all and (max-width: 768px) {
+
+    .detaiLGrid {
+    
+        .productDetail {
+                
+            .infoProductDetail {
+        
+                button.btnPrimary {
+                    width: 260px;
+                }
+    
+            }
+        }
+    
+    }
+
+
+} // fin media

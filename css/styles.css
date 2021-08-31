@@ -1041,6 +1041,10 @@ footer {
     .detaiLGrid .social {
       display: none; } }
 
+@media all and (max-width: 768px) {
+  .detaiLGrid .productDetail .infoProductDetail button.btnPrimary {
+    width: 260px; } }
+
 #contactImage {
   background: url("../../src/contactImage.png");
   background-repeat: no-repeat;
