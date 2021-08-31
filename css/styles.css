@@ -1263,7 +1263,7 @@ footer {
       font-size: 1.5rem;
       font-weight: 600; }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 900px) {
   .order {
     flex-flow: column wrap; }
     .order form {
