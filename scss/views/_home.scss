@@ -198,6 +198,42 @@
     }
 }
 
+@media all and (max-width: 1024px) {
+// Sección how to de la home
+
+
+.howTo {
+
+    .howToInfo {
+        
+        h3 {
+            font: {
+                size: 2rem
+            }
+        }
+
+        p {
+            font: {
+                size: 1rem;
+            }
+        }
+    }
+
+    .howToImage {
+        padding: 0;
+        img {
+            width: 90%;
+        }
+    }
+
+}
+
+
+.recetas {
+    padding: 0 20px;
+}
+
+} // Fin media
 
 @media all and (max-width: 426px) {
 
@@ -386,3 +422,156 @@
     }
     
 } // Fin media 
+
+@media all and (min-width: 427px) and (max-width: 700px) {
+// Imagen del país de la home
+
+.country {
+    background: none;
+}
+
+// Sección de industria nacional
+
+
+.nacional {
+    height: 260px;
+
+    img {
+        filter: none;
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        margin-top: 35px;
+        width: 100%;
+    }
+
+    .imagesBackground {
+        display: none;
+        
+    }
+
+    // Texto "Confiamos en la producción nacional"
+
+    .textImage {
+        width: 100%;
+        font: {
+            size: 2rem;
+        }
+        z-index: 2;
+        margin:  90px 0 0 0;
+        text-align: center;
+    }    
+    
+}
+
+
+// Sección how to de la home
+
+
+.howTo {
+    height: fit-content;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+
+    .howToInfo {
+        
+        z-index: 6;
+        padding: 20px 0 0 10px;
+
+        h3 {
+            color: $black;
+            font: {
+                size: 2rem
+            }
+        }
+
+        p {
+            font: {
+
+                size: 1rem;
+            }
+        }
+    }
+
+    .howToImage {
+        padding: 20px;
+
+        img {
+            margin: 0 auto;
+        }
+        
+    }
+
+}
+
+.productInfo {
+    width: 100%;
+    height: fit-content;
+    flex-flow: column wrap;
+
+
+    .productInfoCard {
+        width: 100%;
+        padding: 10px 32px;
+        text-align: center;
+
+    }
+
+    .borderVerde {
+        border-left: none;
+        border-right: none;
+
+    }
+
+
+}
+
+.recetas {
+    display: none;
+    height: 846px;
+    margin-top: 20px;
+
+    .action {
+        height: 279px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        p:first-child {
+            color: $darkGrey;
+            font: {
+                weight: 700;
+                size: 3rem;
+            }
+            line-height: 0;
+        }
+
+        .greenTextBold {
+            color: $darkGreen;
+            font: {
+                weight: 700;
+                size: 2.25rem;
+            }
+        }
+
+        .thinParagraph {
+            color: $lightGrey;
+            font: {
+                weight: 300;
+                size: 1.25rem;
+            }
+        }
+
+        
+    }
+
+    .images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+} // Fin media
