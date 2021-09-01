@@ -33,10 +33,18 @@
 
 $email = $_POST['email'];
 
-$conexion = mysqli_connect("localhost", "javierwnk", "vVVo)yPuD0&t", "consultasportfolio")  or
+$conexion = mysqli_connect("localhost", "id17494218_estanco", "F8V{>J]}W3kEov_l", "id17494218_suscriptions")  or
 die("Error al conectar la base de datos" . mysqli_error($conexion));
 
-mysqli_query( $conexion, "INSERT INTO suscriptores VALUES (DEFAULT,'$email')");
+mysqli_query( $conexion, "INSERT INTO suscriptions VALUES (DEFAULT,'$email')");
+
+$mimail="estancosaludable.arg@gmail.com";
+
+$cuerpoemail = "Nueva solicitud de suscripción. Email: ".$email;
+$respuesta ="From: Usuario <$email>";
+
+mail ($mimail, "Solicitud de suscripción", $cuerpoemail, $respuesta);
+
 ?>
 
 <body>

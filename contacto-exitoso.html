@@ -31,22 +31,6 @@
 
 <body>
 
-<?php 
-$nya = $_POST['name'];
-$email = $_POST['email2'];
-$phone = $_POST['phone'];
-$mensaje = $_POST ['message'];
-
-$mimail="javierwnk@gmail.com";
-
-$cuerpoemail = "Ha recibido una consulta de ".$nya."\r\n"."Email: ".$email."\r\n"."Telefono de contacto: ".$phone."\r\n"."Mensaje: ".$mensaje;
-$cuerpoenvio = "Se ha enviado su consulta a Estanco Saludable "."\r\n"."Teléfono: ".$phone."\r\n"."Mensaje: ".$mensaje."\r\n"."Le responderemos a la brevedad"."\r\n"."Por favor, no responda este mensaje";
-$respuesta ="From: $nya <$email>";
-$respuestaenvio ="From: Estanco Saludable <javierwnk@gmail.com>";
-
-mail ($mimail, "Ha recido una nueva consulta", $cuerpoemail, $respuesta);
-mail ($email, "Recibimos tu consulta - Estanco Saludable", $cuerpoenvio, $respuestaenvio);
-?>
 
     <header>
         <a href="index.html">
