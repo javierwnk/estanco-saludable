@@ -28,7 +28,7 @@
             color: #4A4A4A;
 
             h2 {
-                word-break: break-all;
+                word-break: break-word;
                 font: {
                     weight: bold;
                     size: 2.25rem;
@@ -64,7 +64,7 @@
             }
 
             .productDescription {
-                word-break: break-all;
+                word-break: break-word;
                 color: $black;
                 font: {
                     weight: 300;
