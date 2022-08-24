@@ -110,6 +110,7 @@ getProducto()
 const addToCart = () => {
     let cargaProducto = { cantidad: document.getElementById("quantityInput").value, id: idProd, ...productoDetalle }
 
+
     let carrito = JSON.parse(sessionStorage.getItem("cart"))
 
     if (carrito === null) {

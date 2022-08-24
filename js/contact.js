@@ -6,7 +6,7 @@ const sendContact = () => {
 
     let texto = `¡Hola Estanco Saludable!%0AMi nombre es ${nombre}. Te hago la siguiente consulta:%0A${mensaje}.%0A%0A Mi email es: ${email}. Mi teléfono es: ${tel}.%0A%0AGracias`
 
-    window.open(`https://api.whatsapp.com/send?phone=541158855912&text=${texto}`)
+    window.open(`https://api.whatsapp.com/send?phone=541111111&text=${texto}`)
 }
 
 document.getElementById("sendContact").addEventListener("click", (evt) => {

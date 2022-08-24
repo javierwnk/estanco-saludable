@@ -19,7 +19,7 @@ const getPosteo = () => {
     fs.doc("blog/" + idPost).get()
         .then(doc => {
             postDetalle = doc.data()
-            window.document.title = doc.data().name       
+            window.document.title = doc.data().title       
             buildblog()
         })
 }

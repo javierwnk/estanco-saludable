@@ -25,7 +25,10 @@ const slider = (categoria) => {
                     <p>Ver todos</p>
                  </div>`
 
-        document.getElementById("sliderListProduct").innerHTML = html
+        
+        if (document.getElementById("sliderListProduct")) {
+            document.getElementById("sliderListProduct").innerHTML = html
+        }
 
 }
 

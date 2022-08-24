@@ -8,9 +8,9 @@ let slide = [{title: "Aceite de Oliva",
             idCategoria: "aceites"},
 
             {title: "Miel santos", 
-            bgImage: "../src/bg2.jpg",
-            descriptionImage: "../src/bg2-1.png",
-            imagePosition: "top",
+            bgImage: "../src/bg2.jpeg",
+            descriptionImage: null,
+            imagePosition: "80%",
             texto: "Acompaña tus desayunos y postres con las mieles e infusiones libre de químicos.",
             idCategoria: "mieles"},
 
